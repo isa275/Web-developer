@@ -4,6 +4,7 @@ let screenCounter = document.getElementById('screen-counter'),
     resetBtn = document.getElementsByClassName('btn-reset')
 
 screenCounter.innerHTML = '0';
+screenCounter.style.fontSize = '45px';
 
 countBtn[0].addEventListener('click', function () {
     screenCounter.innerHTML = + screenCounter.innerHTML + 1;
@@ -12,3 +13,4 @@ countBtn[0].addEventListener('click', function () {
 resetBtn[0].addEventListener('click', function () {
     screenCounter.innerHTML = '0';
 })
+
