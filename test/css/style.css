@@ -25,14 +25,15 @@
 
 .title {
     margin: 0 auto;
-    width: 120px;
+    width: 130px;
     font-size: 14px;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    padding: 1px 0px 1px 0px;
 
 }
 
@@ -78,6 +79,9 @@
 }
 
 .btn-reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 65px;
     height: 65px;
     border-radius: 100%;
@@ -86,6 +90,7 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 500;
+    position: relative;
 }
 
 .btn-reset:active {
@@ -101,6 +106,10 @@
     border: none;
     background-color: rgb(255, 255, 255);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-play:active {
@@ -112,7 +121,35 @@
     margin-left: 25px;
     border: 15px solid transparent;
     border-left: 22px solid #000000;
+    transition: all ease;
+    position: absolute;
 }
 
+.btn-run.rectangular {
+    margin: 0 auto;
+    border-left: none;
+    width: 13px;
+    background-color: #000000;
+}
 
-    
+.btn-run.rectangular {
+    width: 10px;
+    height: 30px;
+    background-color: #000;
+    border: none;
+    position: relative;
+}
+
+.btn-run.rectangular::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 10px;
+    height: 100%;
+    background-color: #000;
+}
+
+.btn-run.rectangular:nth-child(1) {
+    left: -7px;
+}

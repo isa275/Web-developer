@@ -1,15 +1,19 @@
 let screenCounter = document.getElementById('screen-counter'),
-    playBtn = document.getElementsByClassName('btn-play'),
-    countBtn = document.getElementsByClassName('btn-count'),
-    resetBtn = document.getElementsByClassName('btn-reset'),
-    btnRun = document.getElementsByClassName('btn-run')
+    playBtn = document.getElementsByClassName('btn-play')[0],
+    countBtn = document.getElementsByClassName('btn-count')[0],
+    resetBtn = document.getElementsByClassName('btn-reset')[0],
+    btnRun = document.getElementsByClassName('btn-run')[0];
 
 screenCounter.innerHTML = '0';
 
-countBtn[0].addEventListener('click', function () {
+countBtn.addEventListener('click', function () {
     screenCounter.innerHTML = + screenCounter.innerHTML + 1;
 });
 
-resetBtn[0].addEventListener('click', function () {
+resetBtn.addEventListener('click', function () {
     screenCounter.innerHTML = '0';
-})
+});
+
+playBtn.addEventListener('click', function () {
+    btnRun.classList.toggle('rectangular');
+});
