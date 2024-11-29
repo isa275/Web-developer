@@ -2,7 +2,8 @@ let screenCounter = document.getElementById('screen-counter'),
     playBtn = document.getElementsByClassName('btn-play')[0],
     countBtn = document.getElementsByClassName('btn-count')[0],
     resetBtn = document.getElementsByClassName('btn-reset')[0],
-    btnRun = document.getElementsByClassName('btn-run')[0];
+    btnRun = document.getElementsByClassName('btn-run')[0],
+    audio = document.getElementById('audio');
 
 screenCounter.innerHTML = '0';
 
@@ -16,4 +17,10 @@ resetBtn.addEventListener('click', function () {
 
 playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
+    
+    if (audio.paused) {
+        audio.play(); 
+    } else {
+        audio.pause(); 
+    }
 });
