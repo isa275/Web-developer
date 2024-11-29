@@ -17,10 +17,10 @@ resetBtn.addEventListener('click', function () {
 
 playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
-    
+
     if (audio.paused) {
-        audio.play(); 
+        audio.play();
     } else {
-        audio.pause(); 
+        audio.pause();
     }
 });

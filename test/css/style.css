@@ -13,7 +13,7 @@
 .section-counter {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 .counter {
@@ -55,28 +55,73 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    gap: 43%;
+    gap: 42%;
 }
 
-.btn-count {
-    width: 95px;
-    height: 95px;
+.countet-btns-play {
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.btn-play {
+    width: 65px;
+    height: 65px;
     border-radius: 100%;
     position: absolute;
-    margin-top: 85px;
     cursor: pointer;
     background-color: rgb(255, 255, 255);
     font-size: 18px;
     color: rgb(0, 0, 0);
     border: none;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 500;
+}
 
+.btn-left {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-left:active {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-left-back {
+    margin-right: 19px;
+    border: 12px solid transparent;
+    border-right: 20px solid #000000;
+}
+
+.btn-right {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-right-cont {
+    margin-left: 19px;
+    border: 12px solid transparent;
+    border-left: 20px solid #000000;
+}
+
+.btn-right:active {
+    width: 48px;
+    height: 48px;
 }
 
 .btn-count:active {
-    width: 93px;
-    height: 93px;
+    width: 63px;
+    height: 63px;
 }
 
 .btn-reset {
@@ -99,7 +144,7 @@
     height: 63px;
 }
 
-.btn-play {
+.btn-count {
     width: 65px;
     height: 65px;
     border-radius: 100%;
@@ -111,6 +156,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
 
 .btn-play:active {
@@ -123,7 +169,6 @@
     border: 15px solid transparent;
     border-left: 22px solid #000000;
     transition: all ease;
-    position: absolute;
 }
 
 .btn-run.rectangular {
@@ -154,4 +199,3 @@
     height: 100%;
     background-color: #000;
 }
-
