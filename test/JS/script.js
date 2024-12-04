@@ -52,7 +52,7 @@ playBtn.addEventListener('click', function () {
 
 
     const audioCounterText = [
-        'Аль-Бакар - البقرة',
+        'Аль-Бакара - البقرة',
         'Сура Лукман - لقمان',
         'Коран - القرآن',
         'Сура Аль-Мульк - الملك'
