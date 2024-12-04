@@ -5,7 +5,8 @@ let screenCounter = document.getElementById('screen-counter'),
     resetBtn = document.getElementsByClassName('btn-reset')[0],
     btnRun = document.getElementsByClassName('btn-run')[0],
     btnLeft = document.getElementsByClassName('btn-left')[0],
-    btnRight = document.getElementsByClassName('btn-right')[0];
+    btnRight = document.getElementsByClassName('btn-right')[0],
+    colorCounter = document.getElementsByClassName('color-counter')
 
 
 screenCounter.innerHTML = '0';

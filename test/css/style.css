@@ -4,6 +4,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .wrapper {
     width: 1120px;
     max-width: 100%;
@@ -14,7 +22,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh;  */
 }
 
 .counter {
@@ -23,6 +30,7 @@
     border-radius: 40px;
     background-color: #3e4953;
     border: 8px solid rgb(225, 225, 225);
+    margin-top: 10%;
 }
 
 .title {
@@ -56,14 +64,14 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    gap: 42%;
+    gap: 10%;
 }
 
 .countet-btns-play {
     display: flex;
     justify-content: center;
     gap: 30%;
-    margin-top: 50px;
+    margin-top: 60px;
     align-items: center;
 }
 
@@ -79,7 +87,28 @@
     border: none;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border: 2px solid rgb(187, 187, 187);
+}
 
+.btn-play:active {
+    height: 64px;
+}
+
+.color-counter {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: 2px solid rgb(187, 187, 187);
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.color-counter:active {
+    height: 54px;
 }
 
 .btn-left {
@@ -103,8 +132,7 @@
 }
 
 .btn-left:active {
-    width: 48px;
-    height: 48px;
+    height: 49px;
 }
 
 .btn-left-back {
@@ -142,13 +170,11 @@
 }
 
 .btn-right:active {
-    width: 48px;
-    height: 48px;
+    height: 49px;
 }
 
 .btn-count:active {
-    width: 63px;
-    height: 63px;
+    height: 64px;
 }
 
 .btn-reset {
@@ -168,8 +194,7 @@
 }
 
 .btn-reset:active {
-    width: 63px;
-    height: 63px;
+    height: 64px;
 }
 
 .btn-count {
@@ -186,11 +211,6 @@
     justify-content: center;
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
-}
-
-.btn-play:active {
-    width: 63px;
-    height: 63px;
 }
 
 .btn-run {
