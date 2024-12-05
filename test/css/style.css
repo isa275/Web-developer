@@ -22,6 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* height: 100vh; */
 }
 
 .counter {
@@ -49,7 +50,7 @@ body {
 
 .screen {
     margin: 0 auto;
-    width: 250px;
+    width: 240px;
     height: 60px;
     border-radius: 15px;
     background-color: white;
@@ -58,6 +59,8 @@ body {
     font-weight: 500;
     padding-bottom: 1px;
     font-size: 45px;
+    border: 3px solid rgb(225, 225, 225);
+
 }
 
 .counter-btns {
@@ -67,7 +70,7 @@ body {
     gap: 10%;
 }
 
-.countet-btns-play {
+.counter-btns-play {
     display: flex;
     justify-content: center;
     gap: 30%;
@@ -90,7 +93,7 @@ body {
 }
 
 .btn-play:active {
-    height: 64px;
+    height: 63px;
 }
 
 .color-counter {
@@ -108,7 +111,7 @@ body {
 }
 
 .color-counter:active {
-    height: 54px;
+    height: 53px;
 }
 
 .btn-left {
@@ -173,10 +176,6 @@ body {
     height: 49px;
 }
 
-.btn-count:active {
-    height: 64px;
-}
-
 .btn-reset {
     display: flex;
     justify-content: center;
@@ -194,7 +193,7 @@ body {
 }
 
 .btn-reset:active {
-    height: 64px;
+    height: 63px;
 }
 
 .btn-count {
@@ -211,6 +210,10 @@ body {
     justify-content: center;
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
+}
+
+.btn-count:active {
+    height: 63px;
 }
 
 .btn-run {

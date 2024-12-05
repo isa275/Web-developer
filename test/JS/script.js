@@ -6,7 +6,8 @@ let screenCounter = document.getElementById('screen-counter'),
     btnRun = document.getElementsByClassName('btn-run')[0],
     btnLeft = document.getElementsByClassName('btn-left')[0],
     btnRight = document.getElementsByClassName('btn-right')[0],
-    colorCounter = document.getElementsByClassName('color-counter')
+    counter = document.getElementsByClassName('counter')[0],
+    colorCounter = document.getElementsByClassName('color-counter')[0];
 
 
 screenCounter.innerHTML = '0';
@@ -35,6 +36,9 @@ playBtn.addEventListener('click', function () {
         countBtn.disabled = true;
         resetBtn.disabled = true;
 
+        btnLeft.disabled = false;
+        btnRight.disabled = false;
+
     } else {
         audio.pause();
         screenCounter.innerHTML = '0';
@@ -42,43 +46,71 @@ playBtn.addEventListener('click', function () {
 
         countBtn.disabled = false;
         resetBtn.disabled = false;
+
+        btnLeft.disabled = true;
+        btnRight.disabled = true;
     }
+});
 
-    const audioCounter = [
-        'mp3/audio.mp3',
-        'mp3/Sura_Lukman (mp3cut.net).mp3',
-        'mp3/Prekrasnoe_chtenie_Korana.mp3',
-        'mp3/Sura__Al_Mulk.mp3'
-    ];
+const audioCounter = [
+    'mp3/audio.mp3',
+    'mp3/Sura_Lukman (mp3cut.net).mp3',
+    'mp3/Prekrasnoe_chtenie_Korana.mp3',
+    'mp3/Sura__Al_Mulk.mp3'
+];
 
 
-    const audioCounterText = [
-        'Аль-Бакара - البقرة',
-        'Сура Лукман - لقمان',
-        'Коран - القرآن',
-        'Сура Аль-Мульк - الملك'
-    ];
+const audioCounterText = [
+    'Аль-Бакара - البقرة',
+    'Сура Лукман - لقمان',
+    'Коран - القرآن',
+    'Сура Аль-Мульк - الملك'
+];
 
-    let a = 0;
+let a = 0;
 
-    function audioCounterSwitch(index) {
-        if (index >= 0 && index < audioCounter.length) {
-            a = index;
-            audio.src = audioCounter[a];
-            audio.play();
-            screenCounter.innerHTML = audioCounterText[a];
-        }
+function audioCounterSwitch(index) {
+    if (index >= 0 && index < audioCounter.length) {
+        a = index;
+        audio.src = audioCounter[a];
+        audio.play();
+        screenCounter.innerHTML = audioCounterText[a];
     }
+}
 
-    btnLeft.addEventListener('click', function () {
+btnLeft.addEventListener('click', function () {
+    if (!audio.paused) {
         let newIndex = a - 1;
         if (newIndex < 0) newIndex = audioCounter.length - 1;
         audioCounterSwitch(newIndex);
-    });
+    }
+});
 
-    btnRight.addEventListener('click', function () {
+btnRight.addEventListener('click', function () {
+    if (!audio.paused) {
         let newIndex = a + 1;
         if (newIndex >= audioCounter.length) newIndex = 0;
         audioCounterSwitch(newIndex);
-    });
+    }
+});
+
+const colors = [
+    '#A52A2A',
+    '#006400',
+    '#3357FF',
+    '#8E44AD',
+    '#3498DB',
+    '#FFFFFF',
+    '#A9A9A9',
+    '#000000',
+    '#F2F54F',
+    '#3E4953'
+];
+
+let color = 0;
+
+colorCounter.addEventListener('click', function () {
+    counter.style.backgroundColor = colors[color];
+
+    color = (color + 1) % colors.length;
 });
