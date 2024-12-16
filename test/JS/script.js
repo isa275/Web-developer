@@ -7,8 +7,10 @@ let screenCounter = document.getElementById('screen-counter'),
     btnLeft = document.getElementsByClassName('btn-left')[0],
     btnRight = document.getElementsByClassName('btn-right')[0],
     counter = document.getElementsByClassName('counter')[0],
-    colorCounter = document.getElementsByClassName('color-counter')[0];
-
+    colorCounter = document.getElementsByClassName('color-counter')[0],
+    screenPlay = document.getElementsByClassName('screen-play')[0],
+    sectionPlay = document.getElementsByClassName('section-play')[0],
+    modalBtns = document.getElementsByClassName('btns');
 
 screenCounter.innerHTML = '0';
 
@@ -24,31 +26,20 @@ playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
 
     if (audio.paused) {
+        screenPlay.innerHTML = 'Аль-Бакара - البقرة';
         audio.play();
-        screenCounter.innerHTML = 'Аль-Бакара - البقرة';
-        screenCounter.style.fontSize = '19px';
-        screenCounter.style.display = 'flex';
-        screenCounter.style.justifyContent = 'center';
-        screenCounter.style.alignItems = 'center';
-        countBtn.style.color = 'black';
-        resetBtn.style.color = 'black';
+        modalBtns[0].disabled = true;
+        modalBtns[1].disabled = true;
+        modalBtns[2].disabled = true;
 
-        countBtn.disabled = true;
-        resetBtn.disabled = true;
-
-        btnLeft.disabled = false;
-        btnRight.disabled = false;
-
+        modalBtns[0].style.color = 'black';
+        modalBtns[1].style.color = 'black';
+        modalBtns[2].style.color = 'black';
     } else {
         audio.pause();
-        screenCounter.innerHTML = '0';
-        screenCounter.style = '';
-
-        countBtn.disabled = false;
-        resetBtn.disabled = false;
-
-        btnLeft.disabled = true;
-        btnRight.disabled = true;
+        modalBtns[0].disabled = false;
+        modalBtns[1].disabled = false;
+        modalBtns[2].disabled = false;
     }
 });
 
@@ -74,7 +65,7 @@ function audioCounterSwitch(index) {
         a = index;
         audio.src = audioCounter[a];
         audio.play();
-        screenCounter.innerHTML = audioCounterText[a];
+        screenPlay.innerHTML = audioCounterText[a];
     }
 }
 
@@ -114,3 +105,24 @@ colorCounter.addEventListener('click', function () {
 
     color = (color + 1) % colors.length;
 });
+
+screenPlay.innerHTML = 'AUDIO';
+screenPlay.style.fontSize = '25px';
+screenPlay.style.display = 'flex';
+screenPlay.style.justifyContent = 'center';
+screenPlay.style.alignItems = 'center';
+screenPlay.style.textAlign = 'center';
+
+modalBtns[0].addEventListener('click', function () {
+    if (counter.style.display === 'none') {
+        counter.style.display = 'block';
+        sectionPlay.style.display = 'none';
+        modalBtns[0].innerHTML = 'AUDIO'
+    } else {
+        counter.style.display = 'none';
+        sectionPlay.style.display = 'block';
+        modalBtns[0].innerHTML = 'COUNTER'
+    }
+});
+
+// Бисмилляяхир-рахмаанир-рахиим بسم الله الرحمن
