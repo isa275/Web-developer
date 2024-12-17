@@ -10,16 +10,19 @@ let screenCounter = document.getElementById('screen-counter'),
     colorCounter = document.getElementsByClassName('color-counter')[0],
     screenPlay = document.getElementsByClassName('screen-play')[0],
     sectionPlay = document.getElementsByClassName('section-play')[0],
+    modalWindow = document.querySelector('.modal-window'),
+    modalBackground = document.getElementById('modalBackground'),
     modalBtns = document.getElementsByClassName('btns');
 
-screenCounter.innerHTML = '0';
+
+screenCounter.textContent = '0';
 
 countBtn.addEventListener('click', function () {
-    screenCounter.innerHTML = + screenCounter.innerHTML + 1;
+    screenCounter.textContent = (parseInt(screenCounter.textContent) + 1).toString();
 });
 
 resetBtn.addEventListener('click', function () {
-    screenCounter.innerHTML = '0';
+    screenCounter.textContent = '0';
 });
 
 playBtn.addEventListener('click', function () {
@@ -92,7 +95,7 @@ const colors = [
     '#8E44AD',
     '#3498DB',
     '#FFFFFF',
-    '#A9A9A9',
+    '#3e4953',
     '#000000',
     '#F2F54F',
     '#3E4953'
@@ -125,4 +128,24 @@ modalBtns[0].addEventListener('click', function () {
     }
 });
 
-// Бисмилляяхир-рахмаанир-рахиим بسم الله الرحمن
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        modalBackground.classList.add('show');
+        modalWindow.classList.add('show');
+    }, 500);
+});
+
+function hideModal() {
+    modalWindow.classList.remove('show');
+    modalBackground.classList.remove('show');
+
+    setTimeout(function () {
+        modalBackground.style.visibility = 'hidden';
+    }, 500);
+}
+
+modalBackground.addEventListener('click', function (event) {
+    if (event.target === modalBackground) {
+        hideModal();
+    }
+});
