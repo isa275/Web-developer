@@ -47,7 +47,7 @@ body {
     border: 5px solid rgb(225, 225, 225);
     z-index: 1000;
     border-radius: 10px;
-    padding-top: 50px;
+    padding: 50px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, top 0.5s ease;
@@ -83,10 +83,12 @@ body {
     border: 2px solid rgb(187, 187, 187);
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.2s ease;
 }
 
 .btns:active {
-    width: 98px;
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
 }
 
 .section-counter {
@@ -100,7 +102,7 @@ body {
     height: 350px;
     border-radius: 40px;
     background-color: #A9A9A9;
-    border: 8px solid rgb(225, 225, 225);
+    border: 5px solid rgb(225, 225, 225);
     margin-top: 5%;
 }
 
@@ -141,9 +143,10 @@ body {
     display: none;
     margin: 0 auto;
     width: 600px;
-    margin-top: 200px;
-    border: 1px solid #adadad;
+    margin-top: 100px;
     border-radius: 10px;
+    border: 3px solid rgb(225, 225, 225);
+    background-color: #fff;
 }
 
 .counter-btns-play {
@@ -151,17 +154,17 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20%;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .screen-play {
     width: 400px;
     margin: 0 auto;
     display: flex;
-    height: 50px;
+    height: 100px;
+    margin-top: 50px;
     margin-bottom: 50px;
-    margin-top: 30px;
-    line-height: 35px;
+    line-height: 40px;
 }
 
 .btn-play {
@@ -193,10 +196,12 @@ body {
     border: 2px solid rgb(187, 187, 187);
     font-size: 13px;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .color-counter:active {
-    height: 63px;
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
 }
 
 .btn-left {
@@ -275,10 +280,12 @@ body {
     font-weight: 500;
     position: relative;
     border: 2px solid rgb(187, 187, 187);
+    transition: all 0.2s ease;
 }
 
 .btn-reset:active {
-    height: 63px;
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
 }
 
 .btn-count {
@@ -296,10 +303,13 @@ body {
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
     margin-top: 100px;
+    transition: all 0.2s ease;
 }
 
+
 .btn-count:active {
-    height: 78px;
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
 }
 
 .btn-run {
@@ -336,4 +346,42 @@ body {
     width: 8px;
     height: 100%;
     background-color: #000;
+}
+
+.section-tests {
+    display: none;
+}
+
+.tests {
+    margin: 0 auto;
+    text-align: center;
+    width: 480px;
+    height: 200px;
+    border: 3px solid rgb(225, 225, 225);
+    font-size: 25px;
+    margin-top: 100px;
+    border-radius: 10px;
+    display: flex;             
+    flex-direction: column;     
+    justify-content: center;    
+    align-items: center;       
+    background-color: #fff;
+}
+
+.start-btn-test {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: all 0.2s ease;
+}
+
+.start-btn-test:active {
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
 }

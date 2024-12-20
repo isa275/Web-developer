@@ -1,4 +1,7 @@
-let screenCounter = document.getElementById('screen-counter'),
+
+// Получения элементов со страницы
+
+const screenCounter = document.getElementById('screen-counter'),
     audio = document.getElementById('audio'),
     playBtn = document.getElementsByClassName('btn-play')[0],
     countBtn = document.getElementsByClassName('btn-count')[0],
@@ -10,20 +13,28 @@ let screenCounter = document.getElementById('screen-counter'),
     colorCounter = document.getElementsByClassName('color-counter')[0],
     screenPlay = document.getElementsByClassName('screen-play')[0],
     sectionPlay = document.getElementsByClassName('section-play')[0],
+    sectionTests = document.getElementsByClassName('section-tests')[0],
     modalWindow = document.querySelector('.modal-window'),
     modalBackground = document.getElementById('modalBackground'),
     modalBtns = document.getElementsByClassName('btns');
 
+// Изначальное значение счетчика 
 
 screenCounter.textContent = '0';
+
+// Увеличение числа на один
 
 countBtn.addEventListener('click', function () {
     screenCounter.textContent = (parseInt(screenCounter.textContent) + 1).toString();
 });
 
+// Перезапуск счетчика
+
 resetBtn.addEventListener('click', function () {
     screenCounter.textContent = '0';
 });
+
+// Воспроизведение аудиофайла
 
 playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
@@ -45,6 +56,8 @@ playBtn.addEventListener('click', function () {
         modalBtns[2].disabled = false;
     }
 });
+
+// Переключение между аудиофайлами
 
 const audioCounter = [
     'mp3/audio.mp3',
@@ -88,6 +101,15 @@ btnRight.addEventListener('click', function () {
     }
 });
 
+screenPlay.innerHTML = 'بسم الله الرحمن <br>Во имя Аллаха, Милостивого, Милосердного!';
+screenPlay.style.fontSize = '25px';
+screenPlay.style.display = 'flex';
+screenPlay.style.justifyContent = 'center';
+screenPlay.style.alignItems = 'center';
+screenPlay.style.textAlign = 'center';
+
+// Переключение между цветами
+
 const colors = [
     '#A52A2A',
     '#006400',
@@ -109,24 +131,7 @@ colorCounter.addEventListener('click', function () {
     color = (color + 1) % colors.length;
 });
 
-screenPlay.innerHTML = 'AUDIO';
-screenPlay.style.fontSize = '25px';
-screenPlay.style.display = 'flex';
-screenPlay.style.justifyContent = 'center';
-screenPlay.style.alignItems = 'center';
-screenPlay.style.textAlign = 'center';
-
-modalBtns[0].addEventListener('click', function () {
-    if (counter.style.display === 'none') {
-        counter.style.display = 'block';
-        sectionPlay.style.display = 'none';
-        modalBtns[0].innerHTML = 'AUDIO'
-    } else {
-        counter.style.display = 'none';
-        sectionPlay.style.display = 'block';
-        modalBtns[0].innerHTML = 'COUNTER'
-    }
-});
+// Модальное окно
 
 window.addEventListener('load', function () {
     setTimeout(function () {
@@ -149,3 +154,38 @@ modalBackground.addEventListener('click', function (event) {
         hideModal();
     }
 });
+
+// Переключение между секциями
+
+const blockModuls = [
+    sectionPlay,
+    sectionTests,
+    counter
+];
+
+function hideAllBlocks() {
+    blockModuls.forEach(block => block.style.display = 'none');
+}
+
+for (let i = 0; i < modalBtns.length; i++) {
+    modalBtns[i].addEventListener('click', function () {
+        hideAllBlocks();
+
+        switch (i) {
+            case 0:
+                counter.style.display = 'block';
+                modalBtns[0].innerHTML = 'SEND';
+                break;
+            case 1:
+                sectionTests.style.display = 'flex';
+                modalBtns[0].innerHTML = 'COUNTER';
+                break;
+            case 2:
+                sectionPlay.style.display = 'block';
+                modalBtns[0].innerHTML = 'COUNTER';
+                break;
+            default:
+                break;
+        }
+    });
+}
