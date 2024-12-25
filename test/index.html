@@ -13,8 +13,7 @@
     <div class="wrapper">
         <div id="modalBackground" class="modal-background"></div>
         <div class="modal-window">
-            <p>بسم الله الرحمن</p>
-            <p>Во имя Аллаха, Милостивого, Милосердного!</p>
+            <p id="modalText"></p>
         </div>
         <div class="btns-modal">
             <button class="btns">SEND</button>
@@ -34,6 +33,12 @@
         </div>
         <div class="section-play">
             <div class="screen-play"></div>
+            <div class="time-info">
+                <span id="current-time">0:00</span> / <span id="duration-time">0:00</span>
+                <div class="audio-progress-bar" id="audio-progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
             <div class="counter-btns-play">
                 <button class="btn-play">
                     <div class="btn-run"></div>

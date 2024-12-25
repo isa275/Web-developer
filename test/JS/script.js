@@ -1,5 +1,5 @@
 
-// Получения элементов со страницы
+// Получения DOM-элементов со страницы 
 
 const screenCounter = document.getElementById('screen-counter'),
     audio = document.getElementById('audio'),
@@ -16,6 +16,11 @@ const screenCounter = document.getElementById('screen-counter'),
     sectionTests = document.getElementsByClassName('section-tests')[0],
     modalWindow = document.querySelector('.modal-window'),
     modalBackground = document.getElementById('modalBackground'),
+    currentTimeElement = document.getElementById('current-time'),
+    durationTimeElement = document.getElementById('duration-time'),
+    audioProgressBar = document.getElementById('audio-progress-bar'),
+    progressElement = document.getElementById('progress'),
+    timeInfo = document.getElementsByClassName('time-info')[0],
     modalBtns = document.getElementsByClassName('btns');
 
 // Изначальное значение счетчика 
@@ -40,6 +45,7 @@ playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
 
     if (audio.paused) {
+        timeInfo.style.display = 'block';
         screenPlay.innerHTML = 'Аль-Бакара - البقرة';
         audio.play();
         modalBtns[0].disabled = true;
@@ -57,7 +63,7 @@ playBtn.addEventListener('click', function () {
     }
 });
 
-// Переключение между аудиофайлами
+// Переключение аудиофайлов
 
 const audioCounter = [
     'mp3/audio.mp3',
@@ -108,11 +114,48 @@ screenPlay.style.justifyContent = 'center';
 screenPlay.style.alignItems = 'center';
 screenPlay.style.textAlign = 'center';
 
+function updateAudioProgress() {
+    const currentTime = audio.currentTime;
+    const duration = audio.duration;
+
+    if (!isNaN(duration)) {
+        const currentTimeFormatted = formatTime(currentTime);
+        const durationTimeFormatted = formatTime(duration);
+        currentTimeElement.textContent = currentTimeFormatted;
+        durationTimeElement.textContent = durationTimeFormatted;
+
+        const progressPercentage = (currentTime / duration) * 100;
+        progressElement.style.width = progressPercentage + '%';
+    }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+audioProgressBar.addEventListener('click', function (event) {
+    const progressBarWidth = audioProgressBar.offsetWidth;
+    const clickPosition = event.offsetX;
+    const newTime = (clickPosition / progressBarWidth) * audio.duration;
+
+    audio.currentTime = newTime;
+});
+
+audio.addEventListener('timeupdate', updateAudioProgress);
+
+audio.addEventListener('loadedmetadata', function () {
+    const duration = audio.duration;
+    const durationFormatted = formatTime(duration);
+    durationTimeElement.textContent = durationFormatted;
+});
+
+
 // Переключение между цветами
 
 const colors = [
     '#A52A2A',
-    '#006400',
     '#3357FF',
     '#8E44AD',
     '#3498DB',
@@ -120,7 +163,8 @@ const colors = [
     '#3e4953',
     '#000000',
     '#F2F54F',
-    '#3E4953'
+    '#3E4953',
+    '#A9A9A9'
 ];
 
 let color = 0;
@@ -133,25 +177,53 @@ colorCounter.addEventListener('click', function () {
 
 // Модальное окно
 
-window.addEventListener('load', function () {
-    setTimeout(function () {
-        modalBackground.classList.add('show');
-        modalWindow.classList.add('show');
-    }, 500);
-});
+const modalText = [
+    'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
+    'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
+    'АлхамдулиЛлах',
+    'Аллаху Акбар',
+    'ЛаилахаилЛалах',
+    'АстагфируЛлах',
+    'СубханАллах'
+];
+
+let currentIndex = 0;
+let isModalOpen = false;
+let modalTimeout;
+
+function getNextModalText() {
+    const text = modalText[currentIndex];
+    currentIndex = (currentIndex + 1) % modalText.length;
+    return text;
+}
+
+function showModal() {
+    const nextText = getNextModalText();
+    document.getElementById('modalText').innerText = nextText;
+    modalBackground.classList.add('show');
+    modalWindow.classList.add('show');
+    isModalOpen = true;
+}
 
 function hideModal() {
     modalWindow.classList.remove('show');
     modalBackground.classList.remove('show');
+    isModalOpen = false;
 
-    setTimeout(function () {
-        modalBackground.style.visibility = 'hidden';
-    }, 500);
+    modalTimeout = setTimeout(function () {
+        showModal();
+    }, 60000);
 }
 
 modalBackground.addEventListener('click', function (event) {
     if (event.target === modalBackground) {
         hideModal();
+    }
+});
+
+window.addEventListener('load', function () {
+    if (!isModalOpen) {
+        setTimeout(showModal, 500);
     }
 });
 
