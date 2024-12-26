@@ -1,5 +1,5 @@
 
-// Получения DOM-элементов со страницы 
+// DOM-элементы со страницы 
 
 const screenCounter = document.getElementById('screen-counter'),
     audio = document.getElementById('audio'),
@@ -14,13 +14,14 @@ const screenCounter = document.getElementById('screen-counter'),
     screenPlay = document.getElementsByClassName('screen-play')[0],
     sectionPlay = document.getElementsByClassName('section-play')[0],
     sectionTests = document.getElementsByClassName('section-tests')[0],
+    timeInfo = document.getElementsByClassName('time-info')[0],
+    testText = document.getElementsByClassName('test-text')[0],
     modalWindow = document.querySelector('.modal-window'),
     modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
     progressElement = document.getElementById('progress'),
-    timeInfo = document.getElementsByClassName('time-info')[0],
     modalBtns = document.getElementsByClassName('btns');
 
 // Изначальное значение счетчика 
@@ -43,23 +44,23 @@ resetBtn.addEventListener('click', function () {
 
 playBtn.addEventListener('click', function () {
     btnRun.classList.toggle('rectangular');
+    const isPaused = audio.paused;
 
-    if (audio.paused) {
-        timeInfo.style.display = 'block';
-        screenPlay.innerHTML = 'Аль-Бакара - البقرة';
+    if (isPaused) {
         audio.play();
-        modalBtns[0].disabled = true;
-        modalBtns[1].disabled = true;
-        modalBtns[2].disabled = true;
+        timeInfo.style.display = 'block';
+        screenPlay.innerHTML = audioCounterText[a];
 
-        modalBtns[0].style.color = 'black';
-        modalBtns[1].style.color = 'black';
-        modalBtns[2].style.color = 'black';
+        Array.from(modalBtns).forEach(btn => {
+            btn.disabled = true;
+            btn.style.color = 'black';
+        });
     } else {
         audio.pause();
-        modalBtns[0].disabled = false;
-        modalBtns[1].disabled = false;
-        modalBtns[2].disabled = false;
+        Array.from(modalBtns).forEach(btn => {
+            btn.disabled = false;
+            btn.style.color = '';
+        });
     }
 });
 
@@ -80,16 +81,13 @@ const audioCounterText = [
     'Сура Аль-Мульк - الملك'
 ];
 
-let a = 0;
+audio.addEventListener('ended', function () {
+    let newIndex = a + 1;
+    if (newIndex >= audioCounter.length) newIndex = 0;
+    audioCounterSwitch(newIndex);
+});
 
-function audioCounterSwitch(index) {
-    if (index >= 0 && index < audioCounter.length) {
-        a = index;
-        audio.src = audioCounter[a];
-        audio.play();
-        screenPlay.innerHTML = audioCounterText[a];
-    }
-}
+let a = 0;
 
 btnLeft.addEventListener('click', function () {
     if (!audio.paused) {
@@ -106,6 +104,15 @@ btnRight.addEventListener('click', function () {
         audioCounterSwitch(newIndex);
     }
 });
+
+function audioCounterSwitch(index) {
+    if (index >= 0 && index < audioCounter.length) {
+        a = index;
+        audio.src = audioCounter[a];
+        audio.play();
+        screenPlay.innerHTML = audioCounterText[a];
+    }
+}
 
 screenPlay.innerHTML = 'بسم الله الرحمن <br>Во имя Аллаха, Милостивого, Милосердного!';
 screenPlay.style.fontSize = '25px';
@@ -139,7 +146,6 @@ audioProgressBar.addEventListener('click', function (event) {
     const progressBarWidth = audioProgressBar.offsetWidth;
     const clickPosition = event.offsetX;
     const newTime = (clickPosition / progressBarWidth) * audio.duration;
-
     audio.currentTime = newTime;
 });
 
@@ -212,7 +218,7 @@ function hideModal() {
 
     modalTimeout = setTimeout(function () {
         showModal();
-    }, 60000);
+    }, 180000); 
 }
 
 modalBackground.addEventListener('click', function (event) {
@@ -230,10 +236,13 @@ window.addEventListener('load', function () {
 // Переключение между секциями
 
 const blockModuls = [
-    sectionPlay,
-    sectionTests,
-    counter
+      sectionPlay,
+      sectionTests,
+      counter
 ];
+
+testText.innerHTML = 'بسم الله الرحمن <br>Во имя Аллаха, Милостивого, Милосердного!';
+sectionTests.style.textAlign = 'center';
 
 function hideAllBlocks() {
     blockModuls.forEach(block => block.style.display = 'none');
@@ -261,3 +270,4 @@ for (let i = 0; i < modalBtns.length; i++) {
         }
     });
 }
+
