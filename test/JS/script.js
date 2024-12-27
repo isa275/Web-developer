@@ -16,13 +16,21 @@ const screenCounter = document.getElementById('screen-counter'),
     sectionTests = document.getElementsByClassName('section-tests')[0],
     timeInfo = document.getElementsByClassName('time-info')[0],
     testText = document.getElementsByClassName('test-text')[0],
+    tests = document.getElementsByClassName('tests')[0],
+    testSolution = document.getElementsByClassName('test-solution')[0],
+    startBtnTest = document.getElementsByClassName('start-btn-test')[0],
+    textTitle = document.getElementsByClassName('text-title')[0],
+    blockTest = document.getElementsByClassName('block-test')[0],
+    timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
     progressElement = document.getElementById('progress'),
-    modalBtns = document.getElementsByClassName('btns');
+    modalBtns = document.getElementsByClassName('btns'),
+    solutionTestBtns = document.getElementsByClassName('solution-test-btns')[0],
+    sectionCounter = document.getElementsByClassName('section-counter');
 
 // Изначальное значение счетчика 
 
@@ -162,6 +170,7 @@ audio.addEventListener('loadedmetadata', function () {
 
 const colors = [
     '#A52A2A',
+    '#228B22',
     '#3357FF',
     '#8E44AD',
     '#3498DB',
@@ -183,55 +192,55 @@ colorCounter.addEventListener('click', function () {
 
 // Модальное окно
 
-const modalText = [
-    'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
-    'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
-    'АлхамдулиЛлах',
-    'Аллаху Акбар',
-    'ЛаилахаилЛалах',
-    'АстагфируЛлах',
-    'СубханАллах'
-];
+// const modalText = [
+//     'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
+//     'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
+//     'АлхамдулиЛлах',
+//     'Аллаху Акбар',
+//     'ЛаилахаилЛалах',
+//     'АстагфируЛлах',
+//     'СубханАллах'
+// ];
 
-let currentIndex = 0;
-let isModalOpen = false;
-let modalTimeout;
+// let currentIndex = 0;
+// let isModalOpen = false;
+// let modalTimeout;
 
-function getNextModalText() {
-    const text = modalText[currentIndex];
-    currentIndex = (currentIndex + 1) % modalText.length;
-    return text;
-}
+// function getNextModalText() {
+//     const text = modalText[currentIndex];
+//     currentIndex = (currentIndex + 1) % modalText.length;
+//     return text;
+// }
 
-function showModal() {
-    const nextText = getNextModalText();
-    document.getElementById('modalText').innerText = nextText;
-    modalBackground.classList.add('show');
-    modalWindow.classList.add('show');
-    isModalOpen = true;
-}
+// function showModal() {
+//     const nextText = getNextModalText();
+//     document.getElementById('modalText').innerText = nextText;
+//     modalBackground.classList.add('show');
+//     modalWindow.classList.add('show');
+//     isModalOpen = true;
+// }
 
-function hideModal() {
-    modalWindow.classList.remove('show');
-    modalBackground.classList.remove('show');
-    isModalOpen = false;
+// function hideModal() {
+//     modalWindow.classList.remove('show');
+//     modalBackground.classList.remove('show');
+//     isModalOpen = false;
 
-    modalTimeout = setTimeout(function () {
-        showModal();
-    }, 180000); 
-}
+//     modalTimeout = setTimeout(function () {
+//         showModal();
+//     }, 180000); 
+// }
 
-modalBackground.addEventListener('click', function (event) {
-    if (event.target === modalBackground) {
-        hideModal();
-    }
-});
+// modalBackground.addEventListener('click', function (event) {
+//     if (event.target === modalBackground) {
+//         hideModal();
+//     }
+// });
 
-window.addEventListener('load', function () {
-    if (!isModalOpen) {
-        setTimeout(showModal, 500);
-    }
-});
+// window.addEventListener('load', function () {
+//     if (!isModalOpen) {
+//         setTimeout(showModal, 500);
+//     }
+// });
 
 // Переключение между секциями
 
@@ -271,3 +280,22 @@ for (let i = 0; i < modalBtns.length; i++) {
     });
 }
 
+// Секция тесты
+
+textTitle.innerHTML = 'بسم الله الرحمن  <br>Во имя Аллаха, Милостивого, Милосердного!';
+
+startBtnTest.addEventListener('click', function () {
+   tests.style.display = 'none';
+   testSolution.style.display = 'block';
+   modalBtns[0].style.display = 'none';
+   modalBtns[1].style.display = 'none';
+   modalBtns[2].style.display = 'none';
+});
+
+solutionTestBtns.addEventListener('click', function () {
+    counter.style.display = 'block';
+    modalBtns[0].style.display = 'block';
+    modalBtns[1].style.display = 'block';
+    modalBtns[2].style.display = 'block';
+    testSolution.style.display = 'none';
+});

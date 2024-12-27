@@ -200,7 +200,7 @@ body {
 .audio-progress-bar .progress {
     width: 0%;
     height: 100%;
-    background-color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
 
 }
@@ -387,7 +387,6 @@ body {
 
 .section-tests {
     display: none;
-    transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
 
 .test-text {
@@ -405,10 +404,10 @@ body {
     font-size: 25px;
     margin-top: 100px;
     border-radius: 10px;
-    display: flex;             
-    flex-direction: column;     
-    justify-content: center;    
-    align-items: center;       
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
 }
 
@@ -427,6 +426,73 @@ body {
 }
 
 .start-btn-test:active {
+    transform: scale(0.96);
+    background-color: rgb(240, 240, 240);
+}
+
+.test-solution {
+    display: none;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 850px;
+    background-color: #fff;
+}
+
+.text-title {
+    margin: 0 auto;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.test-question-options {
+    font-size: 22px;
+    margin-top: 50px;
+    line-height: 40px;
+}
+
+.test-tickets {
+    width: 500px;
+    margin-left: 50px;
+    font-size: 22px;
+    margin-top: 20px;
+    text-align: left;
+    line-height: 40px;
+    margin-bottom: 50px;
+}
+
+.timer-test {
+    top: 140px;
+    right: 180px;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 24px;
+}
+
+.solution-test-btns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.test-btns {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.test-btns:active {
     transform: scale(0.96);
     background-color: rgb(240, 240, 240);
 }
