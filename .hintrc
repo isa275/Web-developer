@@ -9,23 +9,12 @@
         "button-name": "off"
       }
     ],
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ],
-    "axe/keyboard": [
-      "default",
-      {
-        "nested-interactive": "off"
-      }
-    ],
     "axe/parsing": [
       "default",
       {
         "duplicate-id-active": "off"
       }
-    ]
+    ],
+    "axe/forms": "off"
   }
 }

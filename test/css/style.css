@@ -100,7 +100,7 @@ body {
 
 .btns:active {
     transform: scale(0.96);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
 }
 
 .section-counter {
@@ -149,7 +149,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    gap: 7%;
+    gap: 18px;
 }
 
 .section-play {
@@ -160,6 +160,40 @@ body {
     border-radius: 10px;
     border: 3px solid rgb(225, 225, 225);
     background-color: #fff;
+}
+
+.restart-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: 1px solid rgb(187, 187, 187);
+    position: absolute;
+    margin-right: 320px;
+}
+
+.restart-audio:active {
+    height: 43px;
+}
+
+.sound {
+    width: 45px;
+    height: 45px;
+    border: 1px solid;
+    position: absolute;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border: 1px solid rgb(187, 187, 187);
+    margin-left: 320px;
 }
 
 .counter-btns-play {
@@ -239,7 +273,7 @@ body {
 
 .color-counter:active {
     transform: scale(0.96);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
 }
 
 .btn-left {
@@ -323,7 +357,7 @@ body {
 
 .btn-reset:active {
     transform: scale(0.96);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
 }
 
 .btn-count {
@@ -346,7 +380,7 @@ body {
 
 .btn-count:active {
     transform: scale(0.96);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
 }
 
 .btn-run {
@@ -433,15 +467,16 @@ body {
 .test-solution {
     display: none;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 30px;
     width: 850px;
     background-color: #fff;
+    border-radius: 10px;
+    border: 3px solid rgb(225, 225, 225);
 }
 
 .text-title {
     margin: 0 auto;
     width: 400px;
-    height: 100px;
     text-align: center;
     line-height: 40px;
     font-size: 24px;
@@ -451,6 +486,7 @@ body {
 .test-question-options {
     font-size: 22px;
     margin-top: 50px;
+    margin-bottom: 50px;
     line-height: 40px;
 }
 
@@ -461,23 +497,29 @@ body {
     margin-top: 20px;
     text-align: left;
     line-height: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .timer-test {
-    top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 70px;
     right: 180px;
     position: absolute;
     width: 100px;
-    height: 40px;
+    height: 50px;
     border: 1px solid black;
     font-size: 24px;
+    border-radius: 10px;
+    border: 3px solid rgb(225, 225, 225);
 }
 
 .solution-test-btns {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 50px;
+    align-items: center;
+    margin-bottom: 80px;
 }
 
 .test-btns {
@@ -494,15 +536,62 @@ body {
 
 .test-btns:active {
     transform: scale(0.96);
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
+}
+
+.test-btns-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.test-btns-arrow:active {
+    transform: scale(0.94);
+    background-color: rgb(255, 255, 255);
+}
+
+.numers {
+    display: flex;
+    gap: 15px;
 }
 
 input[type="checkbox"] {
-    transform: scale(1.5); 
+    transform: scale(1.5);
+    accent-color: #000000;
     cursor: pointer;
 }
 
-.number {
+.numers-block {
+    width: 700px;
+    height: 45px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.numbers-questions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 35px;
+    margin-left: 10px;
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.section-numbers-questions {
+    display: none;
+    margin: 20px 0px 20px 0px;
 }
