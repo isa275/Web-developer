@@ -496,3 +496,13 @@ body {
     transform: scale(0.96);
     background-color: rgb(240, 240, 240);
 }
+
+input[type="checkbox"] {
+    transform: scale(1.5); 
+    cursor: pointer;
+}
+
+.number {
+    display: flex;
+    justify-content: space-between;
+}
