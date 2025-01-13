@@ -25,7 +25,8 @@ const screenCounter = document.getElementById('screen-counter'),
     sectionNumbersQuestions = document.getElementsByClassName('section-numbers-questions')[0],
     timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
-    modalBackground = document.getElementById('modalBackground'),
+    restartButton = document.querySelector('.restart-audio');
+modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -92,10 +93,26 @@ const audioCounterText = [
     'Сура Ал-Муъминун - المؤمنون'
 ];
 
+let isRestartActive = false;
+
+restartButton.addEventListener('click', function () {
+    isRestartActive = !isRestartActive;
+    if (isRestartActive) {
+        restartButton.style.backgroundColor = 'rgb(187, 187, 187)';
+    } else {
+        restartButton.style.backgroundColor = 'rgb(255, 255, 255)';
+    }
+});
+
 audio.addEventListener('ended', function () {
-    let newIndex = a + 1;
-    if (newIndex >= audioCounter.length) newIndex = 0;
-    audioCounterSwitch(newIndex);
+    if (isRestartActive) {
+        audio.currentTime = 0;
+        audio.play();
+    } else {
+        let newIndex = a + 1;
+        if (newIndex >= audioCounter.length) newIndex = 0;
+        audioCounterSwitch(newIndex);
+    }
 });
 
 let a = 0;
@@ -230,7 +247,7 @@ function hideModal() {
 
     modalTimeout = setTimeout(function () {
         showModal();
-    }, 180000); 
+    }, 180000);
 }
 
 modalBackground.addEventListener('click', function (event) {
@@ -248,9 +265,9 @@ window.addEventListener('load', function () {
 // Переключение между секциями
 
 const blockModuls = [
-      sectionPlay,
-      sectionTests,
-      counter
+    sectionPlay,
+    sectionTests,
+    counter
 ];
 
 testText.innerHTML = 'بسم الله الرحمن <br>Во имя Аллаха, Милостивого, Милосердного!';
@@ -286,11 +303,11 @@ for (let i = 0; i < modalBtns.length; i++) {
 //
 
 startBtnTest.addEventListener('click', function () {
-   testSolution.style.display = 'block';
-   sectionNumbersQuestions.style.display = 'block';
-   tests.style.display = 'none';
-   modalBtns[0].style.display = 'none';
-   modalBtns[1].style.display = 'none';
-   modalBtns[2].style.display = 'none';
-   modalBtns[3].style.display = 'none';
+    testSolution.style.display = 'block';
+    sectionNumbersQuestions.style.display = 'block';
+    tests.style.display = 'none';
+    modalBtns[0].style.display = 'none';
+    modalBtns[1].style.display = 'none';
+    modalBtns[2].style.display = 'none';
+    modalBtns[3].style.display = 'none';
 });
