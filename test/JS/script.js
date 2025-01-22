@@ -194,8 +194,6 @@ const colors = [
     '#3357FF',
     '#8E44AD',
     '#3498DB',
-    '#FFFFFF',
-    '#3e4953',
     '#000000',
     '#F2F54F',
     '#3E4953',
@@ -212,55 +210,55 @@ colorCounter.addEventListener('click', function () {
 
 // Модальное окно
 
-// const modalText = [
-//     'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
-//     'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
-//     'АлхамдулиЛлах',
-//     'Аллаху Акбар',
-//     'ЛаилахаилЛалах',
-//     'АстагфируЛлах',
-//     'СубханАллах'
-// ];
+const modalText = [
+    'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
+    'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
+    'АлхамдулиЛлах',
+    'Аллаху Акбар',
+    'ЛаилахаилЛалах',
+    'АстагфируЛлах',
+    'СубханАллах'
+];
 
-// let currentIndex = 0;
-// let isModalOpen = false;
-// let modalTimeout;
+let currentIndex = 0;
+let isModalOpen = false;
+let modalTimeout;
 
-// function getNextModalText() {
-//     const text = modalText[currentIndex];
-//     currentIndex = (currentIndex + 1) % modalText.length;
-//     return text;
-// }
+function getNextModalText() {
+    const text = modalText[currentIndex];
+    currentIndex = (currentIndex + 1) % modalText.length;
+    return text;
+}
 
-// function showModal() {
-//     const nextText = getNextModalText();
-//     document.getElementById('modalText').innerText = nextText;
-//     modalBackground.classList.add('show');
-//     modalWindow.classList.add('show');
-//     isModalOpen = true;
-// }
+function showModal() {
+    const nextText = getNextModalText();
+    document.getElementById('modalText').innerText = nextText;
+    modalBackground.classList.add('show');
+    modalWindow.classList.add('show');
+    isModalOpen = true;
+}
 
-// function hideModal() {
-//     modalWindow.classList.remove('show');
-//     modalBackground.classList.remove('show');
-//     isModalOpen = false;
+function hideModal() {
+    modalWindow.classList.remove('show');
+    modalBackground.classList.remove('show');
+    isModalOpen = false;
 
-//     modalTimeout = setTimeout(function () {
-//         showModal();
-//     }, 180000);
-// }
+    modalTimeout = setTimeout(function () {
+        showModal();
+    }, 180000);
+}
 
-// modalBackground.addEventListener('click', function (event) {
-//     if (event.target === modalBackground) {
-//         hideModal();
-//     }
-// });
+modalBackground.addEventListener('click', function (event) {
+    if (event.target === modalBackground) {
+        hideModal();
+    }
+});
 
-// window.addEventListener('load', function () {
-//     if (!isModalOpen) {
-//         setTimeout(showModal, 500);
-//     }
-// });
+window.addEventListener('load', function () {
+    if (!isModalOpen) {
+        setTimeout(showModal, 500);
+    }
+});
 
 // Переключение между секциями
 
@@ -297,7 +295,7 @@ for (let i = 0; i < modalBtns.length; i++) {
     });
 }
 
-//
+// Переход на раздел тесты
 
 startBtnTest.addEventListener('click', function () {
     testSolution.style.display = 'block';
@@ -307,4 +305,36 @@ startBtnTest.addEventListener('click', function () {
     modalBtns[1].style.display = 'none';
     modalBtns[2].style.display = 'none';
     modalBtns[3].style.display = 'none';
+});
+
+// Таймер 
+
+let timer = 19 * 60 + 59;
+
+const timeTest = document.querySelector('.timer-test');
+const startButton = document.querySelector('.start-btn-test');
+let timerInterval;
+
+function timerCount() {
+    const minutes = Math.floor(timer / 60);
+    const seconds = timer % 60;
+    const formattedTime = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    timeTest.textContent = formattedTime;
+
+    if (timer <= 0) {
+        clearInterval(timerInterval);
+    } else {
+        timer--;
+    }
+}
+
+startButton.addEventListener('click', function () {
+    if (!timerInterval) {
+        timerInterval = setInterval(timerCount, 1000);
+    }
+});
+
+window.addEventListener('load', function () {
+    timerCount();
 });
