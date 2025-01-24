@@ -32,7 +32,9 @@ modalBackground = document.getElementById('modalBackground'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
     progressElement = document.getElementById('progress'),
     modalBtns = document.getElementsByClassName('btns'),
-    sectionCounter = document.getElementsByClassName('section-counter');
+    sectionCounter = document.getElementsByClassName('section-counter')
+testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
+    testBtnsRight = document.getElementsByClassName('test-btns-right')[0];
 
 // Изначальное значение счетчика 
 
@@ -338,3 +340,215 @@ startButton.addEventListener('click', function () {
 window.addEventListener('load', function () {
     timerCount();
 });
+
+// Массив с вопросами 
+
+const questions = [
+    {
+        question: "Где родился Пророк Мухаммад (мир ему)?",
+        options: ["Медина", "Мекка", "Таиф", "Ясриб"],
+        correctAnswer: 1
+    }, 
+
+    {
+        question: "В каком возрасте Пророк Мухаммад (мир ему) получил первое откровение?",
+        options: ["25 лет", "30 лет", "40 лет", "50 лет"],
+        correctAnswer: 2   
+    },   
+    {
+        question: "Какой ангел передал Пророку Мухаммаду (мир ему) первое откровение?",
+        options: ["Микаил", "Джибрил", "Исрафил", "Азраил"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как звали первого мужчину, принявшего ислам?",
+        options: ["Али ибн Абу Талиб", "Умар ибн аль-Хаттаб", "Абу Бакр ас-Сиддик", "Усман ибн Аффан"],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько лет длилось пророчество Пророка Мухаммада (мир ему)?",
+        options: ["20 лет", "23 года", "25 лет", "30 лет"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто была первой женой Пророка Мухаммада (мир ему)?",
+        options: ["Аиша бинт Абу Бакр", "Сауда бинт Зам’а", "Хадиджа бинт Хувайлид", "Фатима бинт Мухаммад"],
+        correctAnswer: 2
+    },
+    {
+        question: "Как называлась первая битва мусульман против курайшитов?",
+        options: ["Битва при Ухуде", "Битва при Табуке", "Битва при Бадре", "Битва при Хунейне"],
+        correctAnswer: 2
+    },
+    {
+        question: "В каком году произошел Хиджра — переселение мусульман из Мекки в Медину?",
+        options: ["610 г.", "615 г.", "622 г.", "630 г."],
+        correctAnswer: 2
+    },
+    {
+        question: "Кто стал первым халифом после смерти Пророка Мухаммада (мир ему)?",
+        options: ["Умар ибн аль-Хаттаб", "Абу Бакр ас-Сиддик", "Усман ибн Аффан", "Али ибн Абу Талиб"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто был известен как «Меч Аллаха» (Сайфуллах)?",
+        options: ["Халид ибн аль-Валид", "Умар ибн аль-Хаттаб", "Али ибн Абу Талиб", "Салман аль-Фариси"],
+        correctAnswer: 0
+    },
+    {
+        question: "Сколько лет Пророк Мухаммад (мир ему) прожил в Мекке после начала откровений?",
+        options: ["10 лет", "13 лет", "15 лет", "20 лет"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как звали лучшего друга и ближайшего сподвижника Пророка Мухаммада (мир ему)?",
+        options: ["Усман ибн Аффан", "Али ибн Абу Талиб", "Абу Бакр ас-Сиддик", "Саад ибн Абу Ваккас"],
+        correctAnswer: 2
+    },
+    {
+        question: "Кто был назначен главнокомандующим в битве при Муте?",
+        options: ["Зайд ибн Хариса", "Халид ибн аль-Валид", "Абдуррахман ибн Ауф", "Умар ибн аль-Хаттаб"],
+        correctAnswer: 0
+    },
+    {
+        question: "Какой сахаб был известен своей щедростью и богатством, использовав его для помощи исламу?",
+        options: ["Усман ибн Аффан", "Абдуллах ибн Масуд", "Убай ибн Кааб", "Абу Убайда ибн аль-Джаррах"],
+        correctAnswer: 0
+    },
+    {
+        question: "В каком возрасте умер Пророк Мухаммад (мир ему)?",
+        options: ["60 лет", "61 год", "63 года", "65 лет"],
+        correctAnswer: 2
+    },
+    {
+        question: "Какая битва стала поворотной для мусульман, несмотря на поражение?",
+        options: ["Битва при Бадре", "Битва при Ухуде", "Битва при Табуке", "Битва при Хандаке"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как звали дядю Пророка Мухаммада (мир ему), который защищал его в Мекке?",
+        options: ["Абу Лахаб", "Абу Талиб", "Аббас ибн Абд аль-Мутталиб", "Хамза ибн Абд аль-Мутталиб"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто был первым ребёнком, принявшим ислам?",
+        options: ["Хасан ибн Али", "Хусейн ибн Али", "Али ибн Абу Талиб", "Зайд ибн Хариса"],
+        correctAnswer: 2
+    },
+    {
+        question: "Кто был известен как «переводчик Корана» (Таржуман аль-Коран)?",
+        options: ["Ибн Аббас", "Ибн Масуд", "Убай ибн Кааб", "Саад ибн Муад"],
+        correctAnswer: 0
+    },
+    {
+        question: "В каком году мусульмане вернулись в Мекку (Фатх Мекка)?",
+        options: ["6 год хиджры", "8 год хиджры", "10 год хиджры", "12 год хиджры"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как звали няню Пророка Мухаммада (мир ему)?",
+        options: ["Умм Аиман", "Халима ас-Саадия", "Барка", "Умм Хабиба"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто был известен как «Амин аль-умма» (Хранитель уммы)?",
+        options: ["Абу Бакр ас-Сиддик", "Абу Убайда ибн аль-Джаррах", "Саад ибн Муад", "Хамза ибн Абд аль-Мутталиб"],
+        correctAnswer: 1
+    },
+    {
+        question: "Сколько сахабов участвовало в битве при Бадре?",
+        options: ["214", "313", "400", "1000"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто был известен своей красноречивой речью и умением распространять ислам?",
+        options: ["Абдуллах ибн Масуд", "Мусаб ибн Умайр", "Саад ибн Абу Ваккас", "Зайд ибн Хариса"],
+        correctAnswer: 1
+    },
+    {
+        question: "Какое событие произошло в году, известном как «Год печали» (Ам аль-Хузн)?",
+        options: ["Хиджра в Медину", "Смерть Абу Талиба и Хадиджи", "Битва при Табуке", "Фатх Мекка"],
+        correctAnswer: 1
+    },
+    {
+        question: "В каком году была Битва при Ухуде?",
+        options: ["1 год хиджры", "3 год хиджры", "5 год хиджры", "7 год хиджры"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как звали мать Пророка Мухаммада (мир ему)?",
+        options: ["Амира бинт Абд аль-Уддар", "Амина бинт Уайхаб", "Халима бинт Саадия", "Умм Аиман"],
+        correctAnswer: 1
+    },
+    {
+        question: "Кто был первым рабом, принявшим ислам?",
+        options: ["Зайд ибн Хариса", "Билал ибн Рабах", "Сумая бинт Хайят", "Абу Фахм"],
+        correctAnswer: 1
+    },
+    {
+        question: "Как назывался первый мусульманский календарь?",
+        options: ["Хиджри", "Мекканский", "Лунный", "Суннитский"],
+        correctAnswer: 0
+    },
+    {
+        question: "Как называлась последняя битва, в которой участвовал Пророк Мухаммад (мир ему)?",
+        options: ["Битва при Бадре", "Битва при Ухуде", "Битва при Табуке", "Битва при Хунейне"],
+        correctAnswer: 2
+    }
+];
+
+// Переключение билетов
+
+let currentQuestionIndex = 0;
+
+function updateQuestion() {
+    const question = questions[currentQuestionIndex];
+
+    document.getElementById("question-text").textContent = question.question;
+
+    question.options.forEach((option, index) => {
+        document.getElementById(`answer-${index + 1}`).textContent = option;
+    });
+
+    questionButtons.forEach(button => button.style.border = '');
+
+    questionButtons[currentQuestionIndex].style.border = '2px solid black';
+}
+
+testBtnsLeft.addEventListener('click', function () {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+    } else {
+        currentQuestionIndex = questions.length - 1;
+    }
+    updateQuestion();
+});
+
+testBtnsRight.addEventListener('click', function () {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+    } else {
+        currentQuestionIndex = 0;
+    }
+    updateQuestion();
+});
+
+window.addEventListener('load', function () {
+    updateQuestion();
+});
+
+const questionButtons = document.querySelectorAll('.numbers-questions');
+
+function showQuestion(index) {
+    currentQuestionIndex = index;
+    updateQuestion();
+}
+
+questionButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        showQuestion(index);
+    });
+});
+
+// Ответы 
+

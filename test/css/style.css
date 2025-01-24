@@ -113,10 +113,12 @@ body {
 .counter {
     width: 300px;
     height: 350px;
-    border-radius: 40px;
+    border-radius: 70px;
     background-color: #A9A9A9;
     border: 5px solid rgb(225, 225, 225);
     margin-top: 80px;
+    border-bottom-left-radius: 190px;
+    border-bottom-right-radius: 190px;
 }
 
 .title {
@@ -134,14 +136,15 @@ body {
 
 .screen {
     margin: 0 auto;
-    width: 240px;
-    height: 60px;
+    width: 230px;
+    height: 50px;
     border-radius: 12px;
     background-color: white;
     text-align: right;
     padding-right: 5px;
     font-weight: 500;
     font-size: 45px;
+    padding-bottom: 10px;
     border: 3px solid rgb(225, 225, 225);
 }
 
@@ -254,6 +257,9 @@ body {
 }
 
 .color-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 65px;
     height: 65px;
     border-radius: 100%;
@@ -262,7 +268,6 @@ body {
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     border: 2px solid rgb(187, 187, 187);
-    font-size: 13px;
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -370,7 +375,7 @@ body {
     justify-content: center;
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
-    margin-top: 100px;
+    margin-top: 95px;
     transition: all 0.2s ease;
 }
 
@@ -444,8 +449,8 @@ body {
 
 .levels {
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
+    justify-content: space-around;
+    align-items: center;
     gap: 40px;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -460,32 +465,32 @@ body {
 }
 
 input[type="radio"] {
-    appearance: none; 
-    width: 18px;  
-    height: 18px; 
-    border-radius: 50%; 
-    border: 1px solid #000; 
-    background-color: #fff; 
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #fff;
     position: relative;
-    cursor: pointer; 
+    cursor: pointer;
     margin-top: 10px;
 }
 
 input[type="radio"]:checked {
-    background-color: #000; 
-    border-color: #000;  
+    background-color: #000;
+    border-color: #000;
 }
 
 input[type="radio"]:checked::before {
-    content: ''; 
+    content: '';
     position: absolute;
-    top: 50%;   
-    left: 50%;  
-    width: 50%;  
-    height: 50%; 
-    background-color: #fff;  
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
     border-radius: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 .start-btn-test {
@@ -510,7 +515,8 @@ input[type="radio"]:checked::before {
     display: none;
     margin: 0 auto;
     margin-top: 30px;
-    width: 850px;
+    width: 890px;
+    height: 770px;
     background-color: #fff;
     border-radius: 10px;
     border: 3px solid rgb(225, 225, 225);
@@ -523,13 +529,6 @@ input[type="radio"]:checked::before {
     line-height: 40px;
     font-size: 24px;
     margin-top: 40px;
-}
-
-.test-question-options {
-    font-size: 22px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    line-height: 40px;
 }
 
 .test-tickets {
@@ -561,7 +560,6 @@ input[type="radio"]:checked::before {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 80px;
 }
 
 .test-btns {
@@ -581,7 +579,7 @@ input[type="radio"]:checked::before {
     background-color: rgb(255, 255, 255);
 }
 
-.test-btns-arrow {
+.test-btns-left {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -596,21 +594,31 @@ input[type="radio"]:checked::before {
     transition: all 0.2s ease;
 }
 
-.test-btns-arrow:active {
+.test-btns-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.test-btns-left:active {
     transform: scale(0.94);
     background-color: rgb(255, 255, 255);
 }
 
-.numers {
-    display: flex;
-    gap: 15px;
+.test-btns-right:active {
+    transform: scale(0.94);
+    background-color: rgb(255, 255, 255);
 }
 
-input[type="checkbox"] {
-    transform: scale(1.5);
-    accent-color: #000000;
-    cursor: pointer;
-}
 
 .numers-block {
     width: 700px;
@@ -636,4 +644,33 @@ input[type="checkbox"] {
 .section-numbers-questions {
     display: none;
     margin: 20px 0px 20px 0px;
+}
+
+.test-question {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    font-size: 24px;
+}
+
+#answer-options {
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 80px;
+    font-size: 24px;
+    line-height: 50px;
+
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#question-text {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 680px;
+    height: 100px;
 }
