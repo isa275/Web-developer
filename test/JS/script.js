@@ -348,13 +348,13 @@ const questions = [
         question: "Где родился Пророк Мухаммад (мир ему)?",
         options: ["Медина", "Мекка", "Таиф", "Ясриб"],
         correctAnswer: 1
-    }, 
+    },
 
     {
         question: "В каком возрасте Пророк Мухаммад (мир ему) получил первое откровение?",
         options: ["25 лет", "30 лет", "40 лет", "50 лет"],
-        correctAnswer: 2   
-    },   
+        correctAnswer: 2
+    },
     {
         question: "Какой ангел передал Пророку Мухаммаду (мир ему) первое откровение?",
         options: ["Микаил", "Джибрил", "Исрафил", "Азраил"],
@@ -497,22 +497,58 @@ const questions = [
     }
 ];
 
-// Переключение билетов
+// Переключение вопросов и результаты теста
 
 let currentQuestionIndex = 0;
 
 function updateQuestion() {
     const question = questions[currentQuestionIndex];
-
     document.getElementById("question-text").textContent = question.question;
 
     question.options.forEach((option, index) => {
         document.getElementById(`answer-${index + 1}`).textContent = option;
+        const optionInput = document.getElementById(`option-${index + 1}`);
+        optionInput.checked = false;
     });
 
     questionButtons.forEach(button => button.style.border = '');
-
     questionButtons[currentQuestionIndex].style.border = '2px solid black';
+}
+
+let userAnswers = Array(questions.length).fill(null);
+
+function selectAnswer(answerIndex) {
+    userAnswers[currentQuestionIndex] = answerIndex;
+}
+
+function showResults() {
+    const resultsContainer = document.getElementById("results-container");
+    resultsContainer.innerHTML = '';
+
+    questions.forEach((question, index) => {
+        const resultDiv = document.createElement('div');
+        resultDiv.classList.add('result-item');
+
+        const questionText = document.createElement('p');
+        questionText.textContent = `Вопрос: ${question.question}`;
+        resultDiv.appendChild(questionText);
+
+        const selectedAnswer = userAnswers[index];
+        const selectedAnswerText = selectedAnswer !== null ? question.options[selectedAnswer] : 'Не выбран';
+        const correctAnswerText = question.options[question.correctAnswer];
+
+        const resultText = document.createElement('p');
+        resultText.textContent = `Вы выбрали: ${selectedAnswerText} (Правильный ответ: ${correctAnswerText})`;
+        resultDiv.appendChild(resultText);
+
+        if (selectedAnswer === question.correctAnswer) {
+            resultDiv.classList.add('correct');
+        } else {
+            resultDiv.classList.add('incorrect');
+        }
+
+        resultsContainer.appendChild(resultDiv);
+    });
 }
 
 testBtnsLeft.addEventListener('click', function () {
@@ -550,5 +586,15 @@ questionButtons.forEach((button, index) => {
     });
 });
 
-// Ответы 
+const answerInputs = document.querySelectorAll('input[type="radio"]');
+answerInputs.forEach((input, index) => {
+    input.addEventListener('change', () => {
+        const answerIndex = parseInt(input.value);
+        selectAnswer(answerIndex);
+    });
+});
 
+const viewAnswersButton = document.getElementById('view-answers-button');
+viewAnswersButton.addEventListener('click', function () {
+    showResults();
+});

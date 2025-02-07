@@ -107,7 +107,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100;
 }
 
 .counter {
@@ -464,6 +463,10 @@ body {
     align-items: center;
 }
 
+.level-option input {
+    margin-left: 10px;
+}
+
 input[type="radio"] {
     appearance: none;
     width: 18px;
@@ -673,4 +676,22 @@ input[type="radio"] {
     margin: 0 auto;
     width: 680px;
     height: 100px;
+}
+
+.correct {
+    background-color: #c8e6c9; 
+}
+
+.incorrect {
+    background-color: #ffcdd2; 
+}
+
+.result-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.results-container {
+    display: none;
 }
