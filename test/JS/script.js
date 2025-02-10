@@ -26,15 +26,19 @@ const screenCounter = document.getElementById('screen-counter'),
     timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-modalBackground = document.getElementById('modalBackground'),
+    modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
     progressElement = document.getElementById('progress'),
+    resulsBtn = document.getElementById('resuls-btn'),
+    resultsContainer = document.getElementById('results-container'),
     modalBtns = document.getElementsByClassName('btns'),
     sectionCounter = document.getElementsByClassName('section-counter')
-testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
-    testBtnsRight = document.getElementsByClassName('test-btns-right')[0];
+    modalResultHome = document.getElementsByClassName('modal-result-home')[0],
+    testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
+    testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
+    numbersQuestions = document.getElementsByClassName('numbers-questions')[0];
 
 // Изначальное значение счетчика 
 
@@ -85,7 +89,6 @@ const audioCounter = [
     'mp3/Sura__Al_Mulk.mp3',
     'mp3/Sura Al-Mu1minun .mp3'
 ];
-
 
 const audioCounterText = [
     'Аль-Бакара - البقرة',
@@ -187,7 +190,6 @@ audio.addEventListener('loadedmetadata', function () {
     durationTimeElement.textContent = durationFormatted;
 });
 
-
 // Переключение между цветами
 
 const colors = [
@@ -214,12 +216,12 @@ colorCounter.addEventListener('click', function () {
 
 const modalText = [
     'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
-    'Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
-    'АлхамдулиЛлах',
-    'Аллаху Акбар',
-    'ЛаилахаилЛалах',
-    'АстагфируЛлах',
-    'СубханАллах'
+    'Скажи: Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
+    'Скажи: АлхамдулиЛлах',
+    'Скажи: Аллаху Акбар',
+    'Скажи: ЛаилахаилЛалах',
+    'Скажи: АстагфируЛлах',
+    'Скажи: СубханАллах'
 ];
 
 let currentIndex = 0;
@@ -524,7 +526,9 @@ function selectAnswer(answerIndex) {
 function showResults() {
     const resultsContainer = document.getElementById("results-container");
     resultsContainer.innerHTML = '';
-
+    resultsContainer.style.width = '500px';
+    resultsContainer.style.margin = 'auto';
+    
     questions.forEach((question, index) => {
         const resultDiv = document.createElement('div');
         resultDiv.classList.add('result-item');
@@ -594,7 +598,8 @@ answerInputs.forEach((input, index) => {
     });
 });
 
-const viewAnswersButton = document.getElementById('view-answers-button');
+const viewAnswersButton = document.getElementById('resuls-btn');
 viewAnswersButton.addEventListener('click', function () {
     showResults();
 });
+

@@ -434,7 +434,7 @@ body {
 .tests {
     margin: 0 auto;
     text-align: center;
-    width: 600px;
+    width: 650px;
     border: 3px solid rgb(225, 225, 225);
     font-size: 25px;
     margin-top: 100px;
@@ -517,7 +517,7 @@ input[type="radio"]:checked::before {
 .test-solution {
     display: none;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 10px;
     width: 890px;
     height: 770px;
     background-color: #fff;
@@ -646,7 +646,7 @@ input[type="radio"]:checked::before {
 
 .section-numbers-questions {
     display: none;
-    margin: 20px 0px 20px 0px;
+    margin-top: 20px;
 }
 
 .test-question {
@@ -694,4 +694,43 @@ input[type="radio"] {
 
 .results-container {
     display: none;
+}
+
+#resuls-btn {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+#resuls-btn:active {
+    transform: scale(0.96);
+    background-color: rgb(255, 255, 255);
+}
+
+.modal-result-home {
+    /* display: none; */
+    margin: 0 auto;
+    width: 480px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgb(243, 243, 243);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.modal-result-btns {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
 }
