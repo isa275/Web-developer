@@ -679,11 +679,11 @@ input[type="radio"] {
 }
 
 .correct {
-    background-color: #c8e6c9; 
+    background-color: #c8e6c9;
 }
 
 .incorrect {
-    background-color: #ffcdd2; 
+    background-color: #ffcdd2;
 }
 
 .result-item {
@@ -692,8 +692,26 @@ input[type="radio"] {
     border: 1px solid #ddd;
 }
 
-.results-container {
+#results-container {
     display: none;
+    padding-bottom: 20px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.result-title {
+    font-size: 20px;
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #resuls-btn {
@@ -714,7 +732,7 @@ input[type="radio"] {
 }
 
 .modal-result-home {
-    /* display: none; */
+    display: none;
     margin: 0 auto;
     width: 480px;
     font-size: 22px;
@@ -724,8 +742,9 @@ input[type="radio"] {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border: 3px solid rgb(243, 243, 243);
     border-radius: 10px;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 50px;
+    margin-top: 100px;
 }
 
 .modal-result-btns {

@@ -26,7 +26,7 @@ const screenCounter = document.getElementById('screen-counter'),
     timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-    modalBackground = document.getElementById('modalBackground'),
+modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -34,7 +34,8 @@ const screenCounter = document.getElementById('screen-counter'),
     resulsBtn = document.getElementById('resuls-btn'),
     resultsContainer = document.getElementById('results-container'),
     modalBtns = document.getElementsByClassName('btns'),
-    sectionCounter = document.getElementsByClassName('section-counter')
+    sectionCounter = document.getElementsByClassName('section-counter'),
+    resultTitle = document.getElementsByClassName('result-title')[0],
     modalResultHome = document.getElementsByClassName('modal-result-home')[0],
     testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
     testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
@@ -328,6 +329,7 @@ function timerCount() {
 
     if (timer <= 0) {
         clearInterval(timerInterval);
+        stopTest();
     } else {
         timer--;
     }
@@ -523,12 +525,18 @@ function selectAnswer(answerIndex) {
     userAnswers[currentQuestionIndex] = answerIndex;
 }
 
+function stopTest() {
+    modalResultHome.style.display = 'block';
+    sectionTests.style.display = 'none';
+    sectionNumbersQuestions.style.display = 'none';
+}
+
 function showResults() {
     const resultsContainer = document.getElementById("results-container");
     resultsContainer.innerHTML = '';
     resultsContainer.style.width = '500px';
     resultsContainer.style.margin = 'auto';
-    
+
     questions.forEach((question, index) => {
         const resultDiv = document.createElement('div');
         resultDiv.classList.add('result-item');
@@ -542,7 +550,7 @@ function showResults() {
         const correctAnswerText = question.options[question.correctAnswer];
 
         const resultText = document.createElement('p');
-        resultText.textContent = `Вы выбрали: ${selectedAnswerText} (Правильный ответ: ${correctAnswerText})`;
+        resultText.textContent = `Ответ: ${selectedAnswerText} (Правильный ответ: ${correctAnswerText})`;
         resultDiv.appendChild(resultText);
 
         if (selectedAnswer === question.correctAnswer) {
@@ -600,6 +608,14 @@ answerInputs.forEach((input, index) => {
 
 const viewAnswersButton = document.getElementById('resuls-btn');
 viewAnswersButton.addEventListener('click', function () {
+    resultsContainer.style.display = 'block';
+    resultTitle.style.display = 'block';
+    testSolution.style.display = 'none';
+    sectionNumbersQuestions.style.display = 'none';
+
     showResults();
 });
 
+resulsBtn.addEventListener('click', function () {
+    modalResultHome.style.display = 'none'; 
+});
