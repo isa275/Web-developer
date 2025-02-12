@@ -23,10 +23,15 @@ const screenCounter = document.getElementById('screen-counter'),
     blockTest = document.getElementsByClassName('block-test')[0],
     solutionTestBtns = document.getElementsByClassName('solution-test-btns')[0],
     sectionNumbersQuestions = document.getElementsByClassName('section-numbers-questions')[0],
+    resultTitle = document.getElementsByClassName('result-title')[0],
+    modalResultHome = document.getElementsByClassName('modal-result-home')[0],
+    testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
+    testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
+    numbersQuestions = document.getElementsByClassName('numbers-questions')[0]
     timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-modalBackground = document.getElementById('modalBackground'),
+    modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -34,12 +39,9 @@ modalBackground = document.getElementById('modalBackground'),
     resulsBtn = document.getElementById('resuls-btn'),
     resultsContainer = document.getElementById('results-container'),
     modalBtns = document.getElementsByClassName('btns'),
-    sectionCounter = document.getElementsByClassName('section-counter'),
-    resultTitle = document.getElementsByClassName('result-title')[0],
-    modalResultHome = document.getElementsByClassName('modal-result-home')[0],
-    testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
-    testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
-    numbersQuestions = document.getElementsByClassName('numbers-questions')[0];
+    testBtns = document.querySelectorAll('.test-btns'),
+    number = document.getElementsByClassName('number'),
+    btnsModal = document.querySelector('.btns-modal');
 
 // Изначальное значение счетчика 
 
@@ -617,5 +619,15 @@ viewAnswersButton.addEventListener('click', function () {
 });
 
 resulsBtn.addEventListener('click', function () {
-    modalResultHome.style.display = 'none'; 
+    modalResultHome.style.display = 'none';
+});
+
+// На главную
+
+document.addEventListener("DOMContentLoaded", function () {
+    testBtns.forEach(button => {
+        button.addEventListener('click', function () {
+            window.location.href = '/test';
+        });
+    });
 });

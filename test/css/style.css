@@ -714,6 +714,12 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
+.btns-th {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #resuls-btn {
     width: 100px;
     height: 40px;
