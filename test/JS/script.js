@@ -506,6 +506,8 @@ const questions = [
 // Переключение вопросов и результаты теста
 
 let currentQuestionIndex = 0;
+let userAnswers = Array(questions.length).fill(null);
+let answeredQuestions = Array(questions.length).fill(false);
 
 function updateQuestion() {
     const question = questions[currentQuestionIndex];
@@ -514,17 +516,37 @@ function updateQuestion() {
     question.options.forEach((option, index) => {
         document.getElementById(`answer-${index + 1}`).textContent = option;
         const optionInput = document.getElementById(`option-${index + 1}`);
-        optionInput.checked = false;
+        optionInput.checked = userAnswers[currentQuestionIndex] === index;
+
+        questionButtons.forEach(button => button.style.border = '');
+        questionButtons[currentQuestionIndex].style.border = '2px solid black';
     });
 
-    questionButtons.forEach(button => button.style.border = '');
-    questionButtons[currentQuestionIndex].style.border = '2px solid black';
+    questionButtons.forEach((button, index) => {
+        if (answeredQuestions[index]) {
+            button.classList.add('selected');
+        } else {
+            button.classList.remove('selected');
+        }
+    });
 }
 
-let userAnswers = Array(questions.length).fill(null);
+function updateResultButton() {
+    const viewAnswersButton = document.getElementById('resuls-btn');
+    if (userAnswers.includes(null)) {
+        viewAnswersButton.disabled = true;  
+        viewAnswersButton.classList.add('disabled');  
+    } else {
+        viewAnswersButton.disabled = false; 
+        viewAnswersButton.classList.remove('disabled');  
+    }
+}
 
 function selectAnswer(answerIndex) {
     userAnswers[currentQuestionIndex] = answerIndex;
+    answeredQuestions[currentQuestionIndex] = true;
+    updateQuestion();
+    updateResultButton(); 
 }
 
 function stopTest() {
@@ -585,6 +607,7 @@ testBtnsRight.addEventListener('click', function () {
 
 window.addEventListener('load', function () {
     updateQuestion();
+    updateResultButton(); 
 });
 
 const questionButtons = document.querySelectorAll('.numbers-questions');
@@ -610,12 +633,16 @@ answerInputs.forEach((input, index) => {
 
 const viewAnswersButton = document.getElementById('resuls-btn');
 viewAnswersButton.addEventListener('click', function () {
-    resultsContainer.style.display = 'block';
-    resultTitle.style.display = 'block';
-    testSolution.style.display = 'none';
-    sectionNumbersQuestions.style.display = 'none';
+    if (userAnswers.includes(null)) {
+        alert("Пожалуйста, ответьте на все вопросы перед тем, как просматривать результаты!");
+    } else {
+        resultsContainer.style.display = 'block';
+        resultTitle.style.display = 'block';
+        testSolution.style.display = 'none';
+        sectionNumbersQuestions.style.display = 'none';
 
-    showResults();
+        showResults();
+    }
 });
 
 resulsBtn.addEventListener('click', function () {
@@ -623,7 +650,6 @@ resulsBtn.addEventListener('click', function () {
 });
 
 // На главную
-
 document.addEventListener("DOMContentLoaded", function () {
     testBtns.forEach(button => {
         button.addEventListener('click', function () {

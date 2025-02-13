@@ -446,7 +446,7 @@ body {
     background-color: #fff;
 }
 
-.levels {
+/* .levels {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -465,7 +465,7 @@ body {
 
 .level-option input {
     margin-left: 10px;
-}
+} */
 
 input[type="radio"] {
     appearance: none;
@@ -507,6 +507,7 @@ input[type="radio"]:checked::before {
     border-radius: 5px;
     transition: all 0.2s ease;
     margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .start-btn-test:active {
@@ -704,6 +705,11 @@ input[type="radio"] {
     gap: 50px;
     text-align: center;
     font-size: 20px;
+}
+
+.selected {
+    background-color:#A9A9A9;
+    color: white;
 }
 
 .result-title {
