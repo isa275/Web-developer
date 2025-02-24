@@ -28,10 +28,10 @@ const screenCounter = document.getElementById('screen-counter'),
     testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
     testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
     numbersQuestions = document.getElementsByClassName('numbers-questions')[0]
-    timerTest = document.getElementsByClassName('timer-test'),
+timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-    modalBackground = document.getElementById('modalBackground'),
+modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -149,13 +149,6 @@ function audioCounterSwitch(index) {
         screenPlay.innerHTML = audioCounterText[a];
     }
 }
-
-screenPlay.innerHTML = 'بسم الله الرحمن <br>Во имя Аллаха, Милостивого, Милосердного!';
-screenPlay.style.fontSize = '25px';
-screenPlay.style.display = 'flex';
-screenPlay.style.justifyContent = 'center';
-screenPlay.style.alignItems = 'center';
-screenPlay.style.textAlign = 'center';
 
 function updateAudioProgress() {
     const currentTime = audio.currentTime;
@@ -549,6 +542,40 @@ function showResults() {
     resultsContainer.style.width = '500px';
     resultsContainer.style.margin = 'auto';
 
+    let correctAnswersCount = 0;
+    questions.forEach((question, index) => {
+        const selectedAnswer = userAnswers[index];
+        if (selectedAnswer === question.correctAnswer) {
+            correctAnswersCount++;
+        }
+    });
+
+    const percentage = (correctAnswersCount / questions.length) * 100;
+
+    let grade;
+    let resultText;
+    if (percentage >= 90) {
+        grade = 5;
+        resultText = "Отлично!";
+    } else if (percentage >= 75) {
+        grade = 4;
+        resultText = "Хорошо!";
+    } else if (percentage >= 50) {
+        grade = 3;
+        resultText = "Удовлетворительно";
+    } else {
+        grade = 2;
+        resultText = "Плохо";
+    }
+
+    const resultTitle = document.createElement('h3');
+    resultTitle.textContent = `Результат: ${percentage.toFixed(2)}%`;
+    resultsContainer.appendChild(resultTitle);
+
+    const gradeText = document.createElement('p');
+    gradeText.textContent = `Оценка: ${grade} (${resultText})`;
+    resultsContainer.appendChild(gradeText);
+
     questions.forEach((question, index) => {
         const resultDiv = document.createElement('div');
         resultDiv.classList.add('result-item');
@@ -573,6 +600,11 @@ function showResults() {
 
         resultsContainer.appendChild(resultDiv);
     });
+
+    resultsContainer.style.display = 'block';
+    resultTitle.style.display = 'block';
+    testSolution.style.display = 'none';
+    sectionNumbersQuestions.style.display = 'none';
 }
 
 testBtnsLeft.addEventListener('click', function () {

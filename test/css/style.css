@@ -207,9 +207,13 @@ body {
     width: 400px;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 100px;
     margin-top: 40px;
     line-height: 40px;
+    font-size: 25px;
 }
 
 .time-info {
@@ -688,6 +692,7 @@ input[type="radio"] {
 }
 
 .result-item {
+    margin-top: 20px;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -695,6 +700,7 @@ input[type="radio"] {
 
 #results-container {
     display: none;
+    padding-top: 30px;
     padding-bottom: 20px;
 }
 
@@ -708,16 +714,20 @@ input[type="radio"] {
 }
 
 .selected {
-    background-color:#A9A9A9;
+    background-color: #A9A9A9;
     color: white;
 }
 
 .result-title {
+    margin: 0 auto;
+    width: 800px;
+    background-color: #fff;
     font-size: 20px;
     text-align: center;
     display: none;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 .btns-th {
@@ -739,6 +749,23 @@ input[type="radio"] {
 }
 
 #resuls-btn:active {
+    transform: scale(0.96);
+    background-color: rgb(255, 255, 255);
+}
+
+.resuls-btn-tw {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.resuls-btn-tw:active {
     transform: scale(0.96);
     background-color: rgb(255, 255, 255);
 }
