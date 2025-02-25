@@ -197,6 +197,7 @@ const colors = [
     '#000000',
     '#F2F54F',
     '#3E4953',
+    '#ffff',
     '#A9A9A9'
 ];
 
@@ -524,10 +525,31 @@ function updateQuestion() {
     });
 }
 
+function checkIfTestCompleted() {
+    const allAnswered = userAnswers.every(answer => answer !== null);
+    const showResultsButton = document.getElementById('show-results-btn');
+
+    if (allAnswered) {
+        showResultsButton.style.display = 'inline-block';
+    }
+}
+
+const showResultsButton = document.getElementById('show-results-btn');
+
+showResultsButton.addEventListener('click', function () {
+    resultsContainer.style.display = 'block';
+
+    showResultsButton.style.display = 'none';
+    resultTitle.style.display = 'block';
+
+    showResults();
+});
+
 function selectAnswer(answerIndex) {
     userAnswers[currentQuestionIndex] = answerIndex;
     answeredQuestions[currentQuestionIndex] = true;
     updateQuestion();
+    checkIfTestCompleted();
 }
 
 function stopTest() {
@@ -665,6 +687,7 @@ resulsBtn.addEventListener('click', function () {
 });
 
 // На главную
+
 document.addEventListener("DOMContentLoaded", function () {
     testBtns.forEach(button => {
         button.addEventListener('click', function () {

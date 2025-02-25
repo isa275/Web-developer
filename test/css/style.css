@@ -792,3 +792,20 @@ input[type="radio"] {
     gap: 50px;
     margin-top: 40px;
 }
+
+#show-results-btn {
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+#show-result-btn:active {
+    transform: scale(0.96);
+    background-color: rgb(255, 255, 255);
+}
