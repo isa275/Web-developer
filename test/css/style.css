@@ -37,7 +37,7 @@ body {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    width: 380px;
+    width: 400px;
     height: 150px;
     font-size: 22px;
     text-align: center;
@@ -65,7 +65,7 @@ body {
 }
 
 #modalText {
-    width: 400px;
+    width: 470px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -73,17 +73,16 @@ body {
     text-align: center;
     font-size: 24px;
     color: #000000;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .btns-modal {
     position: absolute;
     right: 40px;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-top: 95px;
+    margin-top: 100px;
 }
 
 .btns {
@@ -115,7 +114,7 @@ body {
     border-radius: 70px;
     background-color: #A9A9A9;
     border: 5px solid rgb(225, 225, 225);
-    margin-top: 80px;
+    margin-top: 100px;
     border-bottom-left-radius: 190px;
     border-bottom-right-radius: 190px;
 }
@@ -438,7 +437,7 @@ body {
 .tests {
     margin: 0 auto;
     text-align: center;
-    width: 650px;
+    width: 600px;
     border: 3px solid rgb(225, 225, 225);
     font-size: 25px;
     margin-top: 100px;
@@ -448,6 +447,47 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+}
+
+.section-read {
+    margin: 0 auto;
+    display: none;
+    width: 700px;
+    background-color: white;
+    border: 3px solid rgb(225, 225, 225);
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.section-read-text {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: 40px;
+}
+
+.section-read-modal {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    gap: 15px;
+    margin-bottom: 80px;
+}
+
+.modal-history {
+    width: 170px;
+    background-color: white;
+    border: 3px solid rgb(225, 225, 225);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
 }
 
 /* .levels {

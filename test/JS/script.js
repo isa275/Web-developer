@@ -27,11 +27,12 @@ const screenCounter = document.getElementById('screen-counter'),
     modalResultHome = document.getElementsByClassName('modal-result-home')[0],
     testBtnsLeft = document.getElementsByClassName('test-btns-left')[0],
     testBtnsRight = document.getElementsByClassName('test-btns-right')[0],
-    numbersQuestions = document.getElementsByClassName('numbers-questions')[0]
-timerTest = document.getElementsByClassName('timer-test'),
+    numbersQuestions = document.getElementsByClassName('numbers-questions')[0],
+    sectionRead = document.getElementsByClassName('section-read')[0],
+    timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-modalBackground = document.getElementById('modalBackground'),
+    modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -98,7 +99,7 @@ const audioCounterText = [
     'Сура Лукман - لقمان',
     'Коран - القرآن',
     'Сура Аль-Мульк - الملك',
-    'Сура Ал-Муъминун - المؤمنون'
+    'Сура Ал-Мукминун - المؤمنون'
 ];
 
 let isRestartActive = false;
@@ -212,7 +213,7 @@ colorCounter.addEventListener('click', function () {
 // Модальное окно
 
 const modalText = [
-    'Би-сми-Лля́хи-р-рахма́ни-р-рахи́м Во имя Аллаха, Милостивого, Милосердного!',
+    'Скажи: Би-сми-Лля́хи-р-рахма́ни-р-рахи́м',
     'Скажи: Ашхаду алля иляха илляЛлах ва ашхаду анна Мухаммадан ‘абдуху ва расулюху',
     'Скажи: АлхамдулиЛлах',
     'Скажи: Аллаху Акбар',
@@ -266,7 +267,8 @@ window.addEventListener('load', function () {
 const blockModuls = [
     sectionPlay,
     sectionTests,
-    counter
+    counter,
+    sectionRead
 ];
 
 function hideAllBlocks() {
@@ -280,7 +282,7 @@ for (let i = 0; i < modalBtns.length; i++) {
         switch (i) {
             case 0:
                 counter.style.display = 'block';
-                modalBtns[0].innerHTML = 'SEND';
+                modalBtns[0].innerHTML = 'HOME';
                 break;
             case 1:
                 sectionTests.style.display = 'flex';
@@ -290,6 +292,9 @@ for (let i = 0; i < modalBtns.length; i++) {
                 sectionPlay.style.display = 'block';
                 modalBtns[0].innerHTML = 'COUNTER';
                 break;
+            case 3:
+                sectionRead.style.display = 'block';
+                modalBtns[0].innerHTML = 'COUNTER';    
             default:
                 break;
         }
@@ -345,18 +350,18 @@ window.addEventListener('load', function () {
 
 const questions = [
     {
-        question: "Где родился Пророк Мухаммад (мир ему)?",
+        question: "Где родился Пророк Мухаммад ﷺ ?",
         options: ["Медина", "Мекка", "Таиф", "Ясриб"],
         correctAnswer: 1
     },
 
     {
-        question: "В каком возрасте Пророк Мухаммад (мир ему) получил первое откровение?",
+        question: "В каком возрасте Пророк Мухаммад ﷺ получил первое откровение?",
         options: ["25 лет", "30 лет", "40 лет", "50 лет"],
         correctAnswer: 2
     },
     {
-        question: "Какой ангел передал Пророку Мухаммаду (мир ему) первое откровение?",
+        question: "Какой ангел передал Пророку Мухаммаду ﷺ первое откровение?",
         options: ["Микаил", "Джибрил", "Исрафил", "Азраил"],
         correctAnswer: 1
     },
@@ -366,12 +371,12 @@ const questions = [
         correctAnswer: 2
     },
     {
-        question: "Сколько лет длилось пророчество Пророка Мухаммада (мир ему)?",
+        question: "Сколько лет длилось пророчество Пророка Мухаммада ﷺ ?",
         options: ["20 лет", "23 года", "25 лет", "30 лет"],
         correctAnswer: 1
     },
     {
-        question: "Кто была первой женой Пророка Мухаммада (мир ему)?",
+        question: "Кто была первой женой Пророка Мухаммада ﷺ ?",
         options: ["Аиша бинт Абу Бакр", "Сауда бинт Зам’а", "Хадиджа бинт Хувайлид", "Фатима бинт Мухаммад"],
         correctAnswer: 2
     },
@@ -386,7 +391,7 @@ const questions = [
         correctAnswer: 2
     },
     {
-        question: "Кто стал первым халифом после смерти Пророка Мухаммада (мир ему)?",
+        question: "Кто стал первым халифом после смерти Пророка Мухаммада ﷺ ?",
         options: ["Умар ибн аль-Хаттаб", "Абу Бакр ас-Сиддик", "Усман ибн Аффан", "Али ибн Абу Талиб"],
         correctAnswer: 1
     },
@@ -396,12 +401,12 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "Сколько лет Пророк Мухаммад (мир ему) прожил в Мекке после начала откровений?",
+        question: "Сколько лет Пророк Мухаммад ﷺ прожил в Мекке после начала откровений?",
         options: ["10 лет", "13 лет", "15 лет", "20 лет"],
         correctAnswer: 1
     },
     {
-        question: "Как звали лучшего друга и ближайшего сподвижника Пророка Мухаммада (мир ему)?",
+        question: "Как звали лучшего друга и ближайшего сподвижника Пророка Мухаммада ﷺ ?",
         options: ["Усман ибн Аффан", "Али ибн Абу Талиб", "Абу Бакр ас-Сиддик", "Саад ибн Абу Ваккас"],
         correctAnswer: 2
     },
@@ -416,7 +421,7 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "В каком возрасте умер Пророк Мухаммад (мир ему)?",
+        question: "В каком возрасте умер Пророк Мухаммад ﷺ ?",
         options: ["60 лет", "61 год", "63 года", "65 лет"],
         correctAnswer: 2
     },
@@ -426,7 +431,7 @@ const questions = [
         correctAnswer: 1
     },
     {
-        question: "Как звали дядю Пророка Мухаммада (мир ему), который защищал его в Мекке?",
+        question: "Как звали дядю Пророка Мухаммада ﷺ , который защищал его в Мекке?",
         options: ["Абу Лахаб", "Абу Талиб", "Аббас ибн Абд аль-Мутталиб", "Хамза ибн Абд аль-Мутталиб"],
         correctAnswer: 1
     },
@@ -446,7 +451,7 @@ const questions = [
         correctAnswer: 1
     },
     {
-        question: "Как звали няню Пророка Мухаммада (мир ему)?",
+        question: "Как звали няню Пророка Мухаммада ﷺ ?",
         options: ["Умм Аиман", "Халима ас-Саадия", "Барка", "Умм Хабиба"],
         correctAnswer: 1
     },
@@ -476,7 +481,7 @@ const questions = [
         correctAnswer: 1
     },
     {
-        question: "Как звали мать Пророка Мухаммада (мир ему)?",
+        question: "Как звали мать Пророка Мухаммада ﷺ ?",
         options: ["Амира бинт Абд аль-Уддар", "Амина бинт Уайхаб", "Халима бинт Саадия", "Умм Аиман"],
         correctAnswer: 1
     },
@@ -491,7 +496,7 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "Как называлась последняя битва, в которой участвовал Пророк Мухаммад (мир ему)?",
+        question: "Как называлась последняя битва, в которой участвовал Пророк Мухаммад ﷺ ?",
         options: ["Битва при Бадре", "Битва при Ухуде", "Битва при Табуке", "Битва при Хунейне"],
         correctAnswer: 2
     }
