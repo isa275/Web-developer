@@ -113,10 +113,11 @@ body {
     height: 350px;
     border-radius: 70px;
     background-color: #A9A9A9;
-    border: 5px solid rgb(225, 225, 225);
     margin-top: 100px;
     border-bottom-left-radius: 190px;
     border-bottom-right-radius: 190px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
 }
 
 .title {
@@ -159,8 +160,9 @@ body {
     width: 600px;
     margin-top: 100px;
     border-radius: 10px;
-    border: 3px solid rgb(225, 225, 225);
     background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
 }
 
 .restart-audio {
@@ -437,8 +439,9 @@ body {
 .tests {
     margin: 0 auto;
     text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
     width: 600px;
-    border: 3px solid rgb(225, 225, 225);
     font-size: 25px;
     margin-top: 100px;
     border-radius: 10px;
@@ -454,7 +457,8 @@ body {
     display: none;
     width: 700px;
     background-color: white;
-    border: 3px solid rgb(225, 225, 225);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
     border-radius: 10px;
     margin-top: 100px;
 }
@@ -479,17 +483,25 @@ body {
 
 .modal-history {
     width: 200px;
-    background-color: white;
-    border: 3px solid rgb(225, 225, 225);
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 10px;
     font-size: 20px;
+}
+.modal-history:active {
+    transform: scale(0.96);
+    background-color: rgb(255, 255, 255);
 }
 
 /* .levels {
@@ -564,12 +576,13 @@ input[type="radio"]:checked::before {
 .test-solution {
     display: none;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 5px;
     width: 890px;
     height: 770px;
     background-color: #fff;
     border-radius: 10px;
-    border: 3px solid rgb(225, 225, 225);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
 }
 
 .text-title {
