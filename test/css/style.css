@@ -44,7 +44,7 @@ body {
     line-height: 40px;
     background-color: white;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    border: 5px solid rgb(225, 225, 225);
+    border: 5px solid  #A9A9A9;
     z-index: 1000;
     border-radius: 10px;
     padding: 50px;
