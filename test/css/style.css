@@ -44,7 +44,7 @@ body {
     line-height: 40px;
     background-color: white;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    border: 5px solid  #A9A9A9;
+    border: 5px solid #A9A9A9;
     z-index: 1000;
     border-radius: 10px;
     padding: 50px;
@@ -499,9 +499,19 @@ body {
     border-radius: 10px;
     font-size: 20px;
 }
+
 .modal-history:active {
     transform: scale(0.96);
     background-color: rgb(255, 255, 255);
+}
+
+.modal-history a {
+    color: #000;
+    text-decoration: none;
+}
+
+.doc-read {
+    display: none;
 }
 
 /* .levels {
@@ -861,6 +871,42 @@ input[type="radio"] {
 }
 
 #show-result-btn:active {
+    transform: scale(0.96);
+    background-color: rgb(255, 255, 255);
+}
+
+.pdfModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+}
+
+.pdfModal iframe {
+    background-color: white;
+    border: none;
+    width: 100%;
+}
+
+.closeModal {
+    top: 8px;
+    right: 300px;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.closeModal:active {
     transform: scale(0.96);
     background-color: rgb(255, 255, 255);
 }

@@ -42,7 +42,9 @@ const screenCounter = document.getElementById('screen-counter'),
     modalBtns = document.getElementsByClassName('btns'),
     testBtns = document.querySelectorAll('.test-btns'),
     number = document.getElementsByClassName('number'),
-    btnsModal = document.querySelector('.btns-modal');
+    btnsModal = document.querySelector('.btns-modal'),
+    docRead = document.getElementsByClassName('doc-read')[0],
+    sectionReadModal = document.querySelectorAll('.section-read-modal');
 
 // Изначальное значение счетчика 
 
@@ -752,4 +754,40 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = '/test';
         });
     });
+});
+
+// Функция для открытия модального окна с документом
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+// Функция для закрытия модального окна
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Обработчики событий для открытия модальных окон
+document.getElementById("openSiraModal").addEventListener("click", function() {
+    openModal("pdfSiraModal");
+});
+
+document.getElementById("openHadithModal").addEventListener("click", function() {
+    openModal("pdfHadithModal");
+});
+
+document.getElementById("openSurahModal").addEventListener("click", function() {
+    openModal("pdfSurahModal");
+});
+
+// Закрытие модальных окон по нажатию на кнопку "HOME"
+document.getElementById("closeSiraModal").addEventListener("click", function() {
+    closeModal("pdfSiraModal");
+});
+
+document.getElementById("closeHadithModal").addEventListener("click", function() {
+    closeModal("pdfHadithModal");
+});
+
+document.getElementById("closeSurahModal").addEventListener("click", function() {
+    closeModal("pdfSurahModal");
 });
