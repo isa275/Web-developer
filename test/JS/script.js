@@ -756,17 +756,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Функция для открытия модального окна с документом
+// Пееключение кнопок в разделе истории 
+
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
 
-// Функция для закрытия модального окна
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
 
-// Обработчики событий для открытия модальных окон
 document.getElementById("openSiraModal").addEventListener("click", function() {
     openModal("pdfSiraModal");
 });
@@ -779,7 +778,6 @@ document.getElementById("openSurahModal").addEventListener("click", function() {
     openModal("pdfSurahModal");
 });
 
-// Закрытие модальных окон по нажатию на кнопку "HOME"
 document.getElementById("closeSiraModal").addEventListener("click", function() {
     closeModal("pdfSiraModal");
 });
