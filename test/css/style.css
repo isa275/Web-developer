@@ -350,12 +350,11 @@ body {
     width: 65px;
     height: 65px;
     border-radius: 100%;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
     background-color: rgb(255, 255, 255);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 500;
-    position: relative;
     border: 2px solid rgb(187, 187, 187);
     transition: all 0.2s ease;
 }
@@ -909,4 +908,174 @@ input[type="radio"] {
 .closeModal:active {
     transform: scale(0.96);
     background-color: rgb(255, 255, 255);
+}
+
+.counter-is-btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Адаптация */
+
+@media (min-width: 1440px) {
+    .counter-is-btns {
+        padding: 40px;
+    }
+
+    .btns-modal {
+        width: auto;
+        margin-top: 100px;
+    }
+
+    .counter {
+        width: 300px;
+        height: 350px;
+    }
+
+    .screen {
+        font-size: 60px;
+    }
+
+    .counter-btns button {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .counter-is-btns {
+        padding: 30px;
+    }
+
+    .btns-modal {
+        width: auto;
+        margin-top: 100px;
+    }
+
+    .counter {
+        width: 300px;
+        height: 350px;
+    }
+
+    .screen {
+        font-size: 45px;
+    }
+
+    .counter-btns button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .counter-is-btns {
+        display: flex;
+        flex-direction: column;  /* Сделаем контейнер вертикальным */
+        justify-content: center;
+        align-items: center;
+        padding: 20px;    }
+
+    .btns-modal {
+        position: static;
+        margin-top: 20px;
+        gap: 20px;
+        margin-top: 40px; 
+        order: 1; 
+    }
+
+    .counter {
+        width: 300px;
+        height: 350px;
+        order: 0;
+        margin-top: 50px;
+    }
+
+    .screen {
+        font-size: 46px;
+    }
+
+    .counter-btns button {
+        font-size: 14px;
+    }
+
+    .btns {
+        width: 130px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .counter-is-btns {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .btns-modal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .counter {
+        width: 300px;
+        height: 350px;
+        margin-top: 50px;
+    }
+
+    .screen {
+        padding-bottom: 12px;
+        font-size: 46px;
+    }
+
+    .counter-btns button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    .counter-is-btns {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .btns-modal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        order: 1;
+        margin-top: 40px; 
+    }
+
+    .btns {
+        width: 130px;
+    }
+
+    .counter {
+        margin-top: 50px;
+        width: 270px;
+        height: 315px;
+        order: 0; 
+    }
+
+    .screen {
+        width: 210px;
+        height: 40px;
+        font-size: 40px;
+    }
+
+    .btn-count {
+        width: 75px;
+        height: 75px;
+        margin-top: 85px;
+    }
+
+    .counter-btns {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 12px;
+    }
 }
