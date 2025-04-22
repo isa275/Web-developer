@@ -936,7 +936,6 @@ input[type="radio"] {
 
 @media (min-width: 1024px) {
     .btns-modal {
-        width: auto;
         margin-top: 100px;
     }
 
@@ -974,7 +973,7 @@ input[type="radio"] {
         width: 300px;
         height: 350px;
         order: 0;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .screen {
@@ -992,12 +991,8 @@ input[type="radio"] {
 }
 
 @media (max-width: 480px) {
-    .counter-is-btns {
-        flex-direction: column;
-    }
-
     .btns-modal {
-        width: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1008,7 +1003,7 @@ input[type="radio"] {
     .counter {
         width: 300px;
         height: 350px;
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .screen {
@@ -1022,12 +1017,8 @@ input[type="radio"] {
 }
 
 @media (max-width: 320px) {
-    .counter-is-btns {
-        flex-direction: column;
-    }
-
     .btns-modal {
-        width: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1041,7 +1032,7 @@ input[type="radio"] {
     }
 
     .counter {
-        margin-top: 50px;
+        margin-top: 30px;
         width: 270px;
         height: 315px;
         order: 0;
@@ -1060,9 +1051,7 @@ input[type="radio"] {
     }
 
     .counter-btns {
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size: 12px;
+         font-size: 12px;
     }
 }
 
@@ -1070,7 +1059,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .tests {
-        width: 400px;
+        width: 380px;
     }
 
     .test-text {
@@ -1086,24 +1075,40 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .tests {
+        width: 370px;
         margin-top: 50px;
-        margin-left: 10px;
-        margin-right: 10px;
+    }
+
+    .test-text {
+        width: 315px;
+        line-height: 40px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 22px;
     }
 }
 
 @media (max-width: 375px) {
     .tests {
-        width: 370px;
-        margin-left: 0;
-        margin-right: 0;
+        width: 330px;
     }
     
     .test-text {
         width: 300px;
         font-size: 21px;
     }
-} 
+}
+
+@media (max-width: 320px) {
+    .tests {
+        width: 280px;
+    }
+
+    .test-text {
+        width: 260px;
+        font-size: 19px;
+    }
+}
 
 @media (max-width: 1024px) {
     .test-solution {
