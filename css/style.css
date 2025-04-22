@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/test/images/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif');
+    background-image: url('/images/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1070,7 +1070,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .tests {
-        width: 430px;
+        width: 400px;
     }
 
     .test-text {
@@ -1091,6 +1091,19 @@ input[type="radio"] {
         margin-right: 10px;
     }
 }
+
+@media (max-width: 375px) {
+    .tests {
+        width: 370px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .test-text {
+        width: 300px;
+        font-size: 21px;
+    }
+} 
 
 @media (max-width: 1024px) {
     .test-solution {
@@ -1246,7 +1259,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .section-play {
-        width: 430px;
+        width: 400px;
     }
 
     .screen-play {
@@ -1309,9 +1322,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .section-read {
-        width: 430px;
-        padding-left: 10px;
-        padding-right: 10px;
+        width: 400px;
     }
 
     .section-read-modal {
@@ -1335,7 +1346,7 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .section-read {
-        width: 420px;
+        width: 390px;
     }
 }
 
