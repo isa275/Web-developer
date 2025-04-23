@@ -998,6 +998,7 @@ input[type="radio"] {
         align-items: center;
         margin-top: 40px;
         gap: 20px;
+        color: #000;
     }
 
     .counter {
@@ -1009,10 +1010,12 @@ input[type="radio"] {
     .screen {
         padding-bottom: 12px;
         font-size: 46px;
+        font-weight: 500;
     }
 
     .counter-btns button {
         font-size: 13px;
+        color: #000;
     }
 }
 
@@ -1051,7 +1054,7 @@ input[type="radio"] {
     }
 
     .counter-btns {
-         font-size: 12px;
+        font-size: 12px;
     }
 }
 
@@ -1059,7 +1062,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .tests {
-        width: 380px;
+        width: 480px;
     }
 
     .test-text {
@@ -1075,7 +1078,7 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .tests {
-        width: 370px;
+        width: 360px;
         margin-top: 50px;
     }
 
@@ -1084,29 +1087,42 @@ input[type="radio"] {
         line-height: 40px;
         margin-top: 30px;
         margin-bottom: 30px;
-        font-size: 22px;
+        font-size: 21px;
+    }
+
+    .start-btn-test {
+        width: 110px;
+        height: 35px;
+        font-size: 13px;
+        color: #000;
     }
 }
 
 @media (max-width: 375px) {
     .tests {
-        width: 330px;
+        width: 310px;
     }
-    
+
     .test-text {
-        width: 300px;
-        font-size: 21px;
+        width: 280px;
+        font-size: 19px;
+        line-height: 35px;
     }
 }
 
 @media (max-width: 320px) {
     .tests {
-        width: 280px;
+        width: 270px;
     }
 
     .test-text {
-        width: 260px;
-        font-size: 19px;
+        width: 250px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .start-btn-test {
+        margin-bottom: 30px;
     }
 }
 
@@ -1264,7 +1280,7 @@ input[type="radio"] {
 
 @media (max-width: 1024px) {
     .section-play {
-        width: 400px;
+        width: 480px;
     }
 
     .screen-play {
@@ -1313,6 +1329,10 @@ input[type="radio"] {
         width: 21px;
         padding-right: 2px;
     }
+
+    .btn-play:active {
+        height: 55px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1323,11 +1343,164 @@ input[type="radio"] {
     }
 }
 
+@media (max-width: 480px) {
+    .section-play {
+        width: 360px;
+    }
+
+    .screen-play {
+        width: 315px;
+        font-size: 21px;
+    }
+
+    .restart-audio {
+        width: 38px;
+        margin-left: 115px;
+    }
+
+    .restart-audio-img {
+        width: 17px;
+    }
+
+    .btn-play {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-run {
+        margin-left: 16px;
+        border: 11px solid transparent;
+        border-left: 20px solid #000000;
+        transition: all ease;
+    }
+
+    .btn-right {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-right-img {
+        width: 18px;
+        padding-left: 5px;
+    }
+
+    .btn-left {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-left-img {
+        width: 18px;
+        padding-right: 2px;
+    }
+
+    .audio-progress-bar {
+        margin: 0 auto;
+        width: 260px;
+        height: 8px;
+        border: 1px solid;
+        cursor: pointer;
+        margin-top: 5px;
+        border-radius: 5px;
+    }
+
+    .btn-play:active {
+        height: 50px;
+    }
+
+    .btn-run.rectangular:nth-child(1) {
+        left: -7px;
+    }
+
+    .btn-run.rectangular {
+        width: 7px;
+        height: 23px;
+        background-color: #000;
+        border: none;
+        position: relative;
+    }
+
+    .btn-run.rectangular::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -15px;
+        width: 7px;
+        height: 100%;
+        background-color: #000;
+    }
+
+    .time-info {
+        width: 270px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 375px) {
+    .section-play {
+        width: 310px;
+    }
+
+    .screen-play {
+        width: 280px;
+        font-size: 19px;
+        line-height: 35px;
+        margin-top: 20px;
+    }
+
+    .counter-btns-play {
+        gap: 23%;
+        margin-bottom: 60px;
+        margin-top: 50px;
+    }
+
+    .audio-progress-bar {
+        width: 240px;
+    }
+}
+
+@media (max-width: 320px) {
+    .section-play {
+        width: 270px;
+    }
+
+    .screen-play {
+        width: 250px;
+        font-size: 18px;
+    }
+
+    .restart-audio {
+        width: 38px;
+        position: absolute;
+        margin-top: 120px;
+        margin-left: 330px;
+    }
+
+    .restart-audio-img {
+        width: 17px;
+    }
+
+    .counter-btns-play {
+        gap: 30%;
+        margin-bottom: 80px;
+
+    }
+
+    .audio-progress-bar {
+        width: 200px;
+    }
+
+    .time-info {
+        width: 250px;
+        font-size: 13px;
+    }
+}
+
 /* Adaptation - Section Story */
 
 @media (max-width: 1024px) {
     .section-read {
-        width: 400px;
+        width: 480px;
     }
 
     .section-read-modal {
@@ -1351,7 +1524,71 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .section-read {
-        width: 390px;
+        width: 360px;
+    }
+
+    .section-read-text {
+        width: 280px;
+        font-size: 19px;
+        line-height: 35px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .section-read-modal {
+        margin: 0 auto;
+        width: 280px;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .modal-history {
+        width: 210px;
+        height: 75px;
+        font-size: 18px;
+        padding: 0;
+        color: #000;
+    }
+}
+
+@media (max-width: 375px) {
+    .section-read {
+        width: 310px;
+    }
+
+    .section-read-modal {
+        margin: 0 auto;
+        width: 260px;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .modal-history {
+        width: 210px;
+        height: 70px;
+        font-size: 18px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .section-read {
+        width: 270px;
+    }
+
+    .section-read-text {
+        width: 250px;
+        font-size: 18px;
+    }
+
+    .section-read-modal {
+        width: 220px;
+    }
+    
+    .modal-history {
+        width: 180px;
+        height: 65px;
+        font-size: 17px;
     }
 }
 
