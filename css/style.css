@@ -1086,16 +1086,16 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .tests {
-        width: 360px;
+        width: 320px;
         margin-top: 50px;
     }
 
     .test-text {
-        width: 315px;
+        width: 300px;
         line-height: 40px;
-        margin-top: 30px;
+        margin-top: 15px;
         margin-bottom: 30px;
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .start-btn-test {
@@ -1103,6 +1103,8 @@ input[type="radio"] {
         height: 35px;
         font-size: 13px;
         color: #000;
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
 }
 
