@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/images/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif');
+    background-image: url('/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1110,28 +1110,42 @@ input[type="radio"] {
 
 @media (max-width: 375px) {
     .tests {
-        width: 310px;
-    }
-
-    .test-text {
-        width: 280px;
-        font-size: 19px;
-        line-height: 35px;
-    }
-}
-
-@media (max-width: 320px) {
-    .tests {
-        width: 270px;
+        width: 300px;
     }
 
     .test-text {
         width: 250px;
         font-size: 18px;
+        line-height: 35px;
+    }
+
+    .start-btn-test {
+        width: 100px;
+        height: 33px;
+        font-size: 12px;
+        color: #000;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .tests {
+        width: 260px;
+    }
+
+    .test-text {
+        width: 230px;
+        font-size: 17px;
         margin-top: 20px;
     }
 
     .start-btn-test {
+        width: 90px;
+        height: 33px;
+        font-size: 11px;
+        color: #000;
+        margin-top: 20px;
         margin-bottom: 30px;
     }
 }
@@ -1275,7 +1289,9 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .test-solution {
-        width: 380px;
+        width: 350px;
+        height: auto;
+        margin-bottom: 30px;
     }
     
     .title-is-timer {
@@ -1285,49 +1301,97 @@ input[type="radio"] {
         margin:  0 auto;
     }
 
-    .text-title {
-        width: 290px;
-        font-size: 20px;
-        order: 0;
-        margin-top: 10px;
+    .test-question {
+       height: 250px;
+       padding-left: 10px;
+       padding-right: 10px;
+       margin-bottom: 10px;
     }
 
-    .test-question {
-        margin-top: 20px;
+    .text-title {
+        width: 250px;
+        font-size: 17px;
+        order: 0;
+        margin-top: 10px;
+        line-height: 31px;
+    }
+
+    .numbers-questions {
+        font-size: 13px;
+        width: 50px;  
+        height: 25px; 
+        border-radius: 50%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
     }
 
     .numers-block {
-        width: 200px;
+        width: 300px;
     }
 
     #question-text {
-        width: 347px;
-        font-size: 20px;
-        margin-bottom: 50px;
+        width: auto;
+        height: auto;
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
     }
 
     #answer-options {
-        width: 350px;
+        width: auto;
         margin-top: 0;
-        font-size: 20px;
-        text-align: center;
-        margin: 0 auto;
+        font-size: 16px;
         line-height: 35px;
-        margin-bottom: 55px;
+        margin-left: 30px;
+        margin-bottom: 0px;
     }
 
     input[type="radio"] {
-        width: 15px;
-        height: 15px;
+        width: 13px;
+        height: 13px;
         margin-right: 10px;
     }
 
     .timer-test {
         width: 95px;
-        font-size: 20px;
+        height: 30px;
+        font-size: 17px;
         margin: 0 auto;
         margin-top: 12px;
         order: 1;
+    }
+
+    .solution-test-btns {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        margin-bottom: 35px;
+    }
+
+    .test-btns-left {
+        width: 40px;
+        height: 40px;
+    }
+
+    .test-btns-left-img {
+        width: 17px;
+    }
+
+    .test-btns-right {
+        width: 40px;
+        height: 40px;
+    }
+
+    .test-btns-right-img {
+        width: 17px;
+    }
+    
+    .test-btns {
+        width: 95px;
+        height: 31px;
+        font-size: 13px;
     }
 }
 
