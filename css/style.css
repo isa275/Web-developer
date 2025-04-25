@@ -1035,6 +1035,9 @@ input[type="radio"] {
         margin-top: 40px;
         gap: 20px;
         margin-bottom: 30px;
+    }
+
+    .btns-modal button {
         color: #000 !important; 
     }
 
