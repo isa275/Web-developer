@@ -1373,7 +1373,7 @@ input[type="radio"] {
        height: 250px;
        padding-left: 10px;
        padding-right: 10px;
-       margin-bottom: 20px;
+       margin-bottom: 30px;
     }
 
     .text-title {
@@ -1461,12 +1461,14 @@ input[type="radio"] {
         width: 75px;
         height: 30px;
         font-size: 12px;
+        color: #000 !important; 
     }
 
     #show-results-btn {
         width: 75px;
         height: 30px;
         font-size: 12px;
+        color: #000 !important; 
     }
 
     .result-title {
@@ -1542,7 +1544,7 @@ input[type="radio"] {
     }
 
     .solution-test-btns {
-        gap: 35px;
+        gap: 5%;
         margin-bottom: 35px;
     }
 
@@ -1562,6 +1564,20 @@ input[type="radio"] {
 
     .test-btns-right-img {
         width: 14px;
+    }
+
+    .test-btns {
+        width: 65px;
+        height: 25px;
+        font-size: 10px;
+        color: #000 !important;
+    }
+
+    #show-results-btn {
+        width: 65px;
+        height: 25px;
+        font-size: 10px;
+        color: #000 !important;
     }
     
     .numers-block {
