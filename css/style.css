@@ -13,7 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    background-color: #f1f1f1;
+    background: linear-gradient(to top, #ffffff, #f0f0f0);
 }
 
 .wrapper {
@@ -929,7 +929,7 @@ input[type="radio"] {
 
     .screen {
         font-size: 60px;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .counter-btns button {
@@ -999,7 +999,7 @@ input[type="radio"] {
 
     .screen {
         font-size: 46px;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .counter-btns button {
@@ -1051,7 +1051,7 @@ input[type="radio"] {
     .screen {
         padding-bottom: 12px;
         font-size: 46px;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .counter-btns button {
@@ -1104,7 +1104,7 @@ input[type="radio"] {
         width: 210px;
         height: 40px;
         font-size: 40px;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .btn-count {
