@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif');
+    /* background-image: url('/white-black-mosque-with-white-dome-clock-top-background-ramadan-social-media_430468-783.avif'); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,6 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
+    background-color: #f1f1f1;
 }
 
 .wrapper {
