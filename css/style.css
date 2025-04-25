@@ -1034,8 +1034,8 @@ input[type="radio"] {
         align-items: center;
         margin-top: 40px;
         gap: 20px;
-        color: #000;
         margin-bottom: 30px;
+        color: #000 !important; 
     }
 
     .counter {
