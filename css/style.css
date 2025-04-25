@@ -1435,7 +1435,7 @@ input[type="radio"] {
     .solution-test-btns {
         display: flex;
         justify-content: center;
-        gap: 35px;
+        gap: 5%;
         margin-bottom: 35px;
     }
 
@@ -1458,9 +1458,27 @@ input[type="radio"] {
     }
     
     .test-btns {
-        width: 95px;
-        height: 31px;
-        font-size: 13px;
+        width: 75px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    #show-results-btn {
+        width: 75px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .result-title {
+        width: 500px;
+        font-size: 16px;
+    }
+
+    .result-item {
+        margin: 0 auto;
+        width: 350px;
+        font-size: 16px;
+        margin-top: 20px;
     }
 }
 
@@ -1546,12 +1564,6 @@ input[type="radio"] {
         width: 14px;
     }
     
-    .test-btns {
-        width: 90px;
-        height: 25px;
-        font-size: 11px;
-    }
-
     .numers-block {
         width: 250px;
     }

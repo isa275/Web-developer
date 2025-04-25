@@ -751,7 +751,7 @@ resulsBtn.addEventListener('click', function () {
 document.addEventListener("DOMContentLoaded", function () {
     testBtns.forEach(button => {
         button.addEventListener('click', function () {
-            window.location.href = '/test';
+            window.location.href = '/index.html';
         });
     });
 });
