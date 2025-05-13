@@ -13,7 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    background: linear-gradient(to top, #ffffff, #f0f0f0);
+    /* background: linear-gradient(to top, #ffffff, #f0f0f0); */
 }
 
 .wrapper {
@@ -113,48 +113,49 @@ body {
 
 .counter {
     width: 300px;
-    height: 350px;
-    border-radius: 70px;
+    border-radius: 300px;
     background-color: #A9A9A9;
     margin-top: 100px;
-    border-bottom-left-radius: 190px;
-    border-bottom-right-radius: 190px;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 700px;
+    border-bottom-right-radius: 700px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5),  
+    -4px 4px 4px rgba(0, 0, 0, 0.5), 
+    0px -4px 4px rgba(0, 0, 0, 0.5); 
     border: 2px solid rgb(187, 187, 187);
 }
 
 .title {
     margin: 0 auto;
-    width: 130px;
+    width: 150px;
     font-size: 14px;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-    padding: 1px 0px 1px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 .screen {
     margin: 0 auto;
     width: 230px;
-    height: 50px;
-    border-radius: 12px;
+    height: 55px;
+    border-radius: 20px;
     background-color: white;
     text-align: right;
     padding-right: 5px;
     font-weight: 500;
     font-size: 45px;
-    padding-bottom: 10px;
     border: 3px solid rgb(225, 225, 225);
+    padding-bottom: 5px;
 }
 
 .counter-btns {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    gap: 18px;
+    margin-top: 25px;
+    gap: 14px;
 }
 
 .section-play {
@@ -362,7 +363,7 @@ body {
     justify-content: center;
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
-    margin-top: 95px;
+    margin-top: 90px;
     transition: all 0.2s ease;
 }
 
@@ -907,11 +908,11 @@ input[type="radio"] {
     background-color: rgb(255, 255, 255);
 }
 
-.counter-is-btns {
+/* .wrapper-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
+} */
 
 /* Adaptation - Section Home page */
 
@@ -973,7 +974,7 @@ input[type="radio"] {
 }
 
 @media (max-width: 768px) {
-    .counter-is-btns {
+    .wrapper-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
