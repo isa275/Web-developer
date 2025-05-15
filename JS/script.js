@@ -757,19 +757,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// document.getElementById("openSurahModal").addEventListener("click", function() {
-//     window.open("https://azan.ru/upload/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%9A%D1%83%D1%80I%D0%B0%D0%BD.pdf", "_blank");
-// });
+document.getElementById("openSurahModal").addEventListener("click", function() {
+    openModal("pdfSurahModal");
+    document.getElementById("surahIframe").src = "./pdfs/BlessedQuran.pdf";  // Путь к PDF-файлу в проекте
+});
 
-// document.getElementById("openSiraModal").addEventListener("click", function() {
-//     window.open("https://azan.kz/upload/Ibn_Khisham_Zhizneopisanie_proroka_Mukhammada.pdf", "_blank");
-// });
+document.getElementById("openSiraModal").addEventListener("click", function() {
+    openModal("pdfSiraModal");
+    document.getElementById("siraIframe").src = "./pdfs/Sira.pdf";  // Путь к PDF-файлу в проекте
+});
 
-// document.getElementById("openHadithModal").addEventListener("click", function() {
-//     window.open("https://azan.kz/upload/101%20%D0%A5%D0%90%D0%94%D0%98%D0%A1%20%D0%98%D0%97%20%C2%AB%D0%A1%D0%90%D0%A5%D0%98%D0%A5%20%D0%90%D0%9B%D0%AC-%D0%91%D0%A3%D0%A5%D0%90%D0%A0%D0%98%C2%BB.pdf", "_blank");
-// });
-
-// Пееключение кнопок в разделе истории 
+document.getElementById("openHadithModal").addEventListener("click", function() {
+    openModal("pdfHadithModal");
+    document.getElementById("hadithIframe").src = "./pdfs/101_HADIS.pdf";  // Путь к PDF-файлу в проекте
+});
 
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
@@ -778,18 +779,6 @@ function openModal(modalId) {
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none";
 }
-
-document.getElementById("openSiraModal").addEventListener("click", function() {
-    openModal("pdfSiraModal");
-});
-
-document.getElementById("openHadithModal").addEventListener("click", function() {
-    openModal("pdfHadithModal");
-});
-
-document.getElementById("openSurahModal").addEventListener("click", function() {
-    openModal("pdfSurahModal");
-});
 
 document.getElementById("closeSiraModal").addEventListener("click", function() {
     closeModal("pdfSiraModal");
@@ -802,51 +791,3 @@ document.getElementById("closeHadithModal").addEventListener("click", function()
 document.getElementById("closeSurahModal").addEventListener("click", function() {
     closeModal("pdfSurahModal");
 });
-
-
-const url = './BlessedQuran.pdf'; // Путь к вашему PDF-файлу
-
-    pdfjsLib.getDocument(url).promise.then(function(pdf) {
-      const viewer = document.getElementById('pdfViewer');
-      let currentPage = 1;  // Номер текущей страницы
-
-      // Функция для рендеринга страницы
-      function renderPage(pageNum) {
-        pdf.getPage(pageNum).then(function(page) {
-          const scale = 1.5;  // Масштаб для страницы
-          const viewport = page.getViewport({ scale: scale });
-
-          const canvas = document.createElement('canvas');  // Создаем холст для отображения страницы
-          viewer.innerHTML = '';  // Очищаем старый рендер
-          viewer.appendChild(canvas);
-
-          const context = canvas.getContext('2d');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          // Рендерим страницу на холсте
-          page.render({
-            canvasContext: context,
-            viewport: viewport
-          });
-        });
-      }
-
-      renderPage(currentPage); // Рендерим первую страницу
-
-      // Навигация по страницам
-      document.getElementById('next').addEventListener('click', function() {
-        if (currentPage < pdf.numPages) {
-          currentPage++;
-          renderPage(currentPage);
-        }
-      });
-
-      document.getElementById('prev').addEventListener('click', function() {
-        if (currentPage > 1) {
-          currentPage--;
-          renderPage(currentPage);
-        }
-      });
-
-    });
