@@ -757,37 +757,49 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 document.getElementById("openSurahModal").addEventListener("click", function() {
-    openModal("pdfSurahModal");
-    document.getElementById("surahIframe").src = "./pdfs/BlessedQuran.pdf";  // Путь к PDF-файлу в проекте
+    window.open("https://azan.ru/upload/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%9A%D1%83%D1%80I%D0%B0%D0%BD.pdf", "_blank");
 });
 
 document.getElementById("openSiraModal").addEventListener("click", function() {
-    openModal("pdfSiraModal");
-    document.getElementById("siraIframe").src = "./pdfs/Sira.pdf";  // Путь к PDF-файлу в проекте
+    window.open("https://azan.kz/upload/Ibn_Khisham_Zhizneopisanie_proroka_Mukhammada.pdf", "_blank");
 });
 
 document.getElementById("openHadithModal").addEventListener("click", function() {
-    openModal("pdfHadithModal");
-    document.getElementById("hadithIframe").src = "./pdfs/101_HADIS.pdf";  // Путь к PDF-файлу в проекте
+    window.open("https://azan.kz/upload/101%20%D0%A5%D0%90%D0%94%D0%98%D0%A1%20%D0%98%D0%97%20%C2%AB%D0%A1%D0%90%D0%A5%D0%98%D0%A5%20%D0%90%D0%9B%D0%AC-%D0%91%D0%A3%D0%A5%D0%90%D0%A0%D0%98%C2%BB.pdf", "_blank");
 });
 
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
-}
+// Пееключение кнопок в разделе истории 
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-}
+// function openModal(modalId) {
+//     document.getElementById(modalId).style.display = "block";
+// }
 
-document.getElementById("closeSiraModal").addEventListener("click", function() {
-    closeModal("pdfSiraModal");
-});
+// function closeModal(modalId) {
+//     document.getElementById(modalId).style.display = "none";
+// }
 
-document.getElementById("closeHadithModal").addEventListener("click", function() {
-    closeModal("pdfHadithModal");
-});
+// document.getElementById("openSiraModal").addEventListener("click", function() {
+//     openModal("pdfSiraModal");
+// });
 
-document.getElementById("closeSurahModal").addEventListener("click", function() {
-    closeModal("pdfSurahModal");
-});
+// document.getElementById("openHadithModal").addEventListener("click", function() {
+//     openModal("pdfHadithModal");
+// });
+
+// document.getElementById("openSurahModal").addEventListener("click", function() {
+//     openModal("pdfSurahModal");
+// });
+
+// document.getElementById("closeSiraModal").addEventListener("click", function() {
+//     closeModal("pdfSiraModal");
+// });
+
+// document.getElementById("closeHadithModal").addEventListener("click", function() {
+//     closeModal("pdfHadithModal");
+// });
+
+// document.getElementById("closeSurahModal").addEventListener("click", function() {
+//     closeModal("pdfSurahModal");
+// });
