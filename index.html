@@ -7,8 +7,7 @@
     <title>ISLAM</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="icons/istockphoto-1140553655-612x612.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABQdBZH4HHRM4C7bdNuw8wCibooJ3vX1XcJ4gU3h27U7rF1drR2VY12" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABQdBZH4HHRM4C7bdNuw8wCibooJ3vX1XcJ4gU3h27U7rF1drR2VY12" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,35 +36,35 @@
                 </div>
             </div>
 
-            <div class="section-play">
-                <div class="screen-play">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
-                <div class="time-info">
-                    <span id="current-time">0:00</span> / <span id="duration-time">0:00</span>
-                    <div class="audio-progress-bar" id="audio-progress-bar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                </div>
-                <div class="counter-btns-play">
-                    <button class="btn-left">
-                        <img class="btn-left-img" src="icons/rewind-icon-lg.png" alt="img">
-                    </button>
-                    <button class="btn-play">
-                        <div class="btn-run"></div>
-                        <audio id="audio" src="mp3/audio.mp3"></audio>
-                        <audio id="audio" src="mp3/Sura_Lukman (mp3cut.net).mp3"></audio>
-                        <audio id="audio" src="mp3/Prekrasnoe_chtenie_Korana.mp3"></audio>
-                        <audio id="audio" src="mp3/Sura__Al_Mulk.mp3"></audio>
-                        <audio id="audio" src="mp3/Sura Al-Mu1minun .mp3"></audio>
-                    </button>
-                    <button class="btn-right">
-                        <img class="btn-right-img" src="icons/rewind-icon-lg2.png" alt="img">
-                    </button>
-                    <button class="restart-audio">
-                        <img class="restart-audio-img" src="icons/87443.png" alt="img">
-                    </button>
+        <div class="section-play">
+            <div class="screen-play">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
+            <div class="time-info">
+                <span id="current-time">0:00</span> / <span id="duration-time">0:00</span>
+                <div class="audio-progress-bar" id="audio-progress-bar">
+                    <div class="progress" id="progress"></div>
                 </div>
             </div>
-  <div class="section-read">
+            <div class="counter-btns-play">
+                <button class="btn-left">
+                    <img class="btn-left-img" src="icons/rewind-icon-lg.png" alt="img">
+                </button>
+                <button class="btn-play">
+                    <div class="btn-run"></div>
+                    <audio id="audio" src="mp3/audio.mp3"></audio>
+                    <audio id="audio" src="mp3/Sura_Lukman (mp3cut.net).mp3"></audio>
+                    <audio id="audio" src="mp3/Prekrasnoe_chtenie_Korana.mp3"></audio>
+                    <audio id="audio" src="mp3/Sura__Al_Mulk.mp3"></audio>
+                    <audio id="audio" src="mp3/Sura Al-Mu1minun .mp3"></audio>
+                </button>
+                <button class="btn-right">
+                     <img class="btn-right-img" src="icons/rewind-icon-lg2.png" alt="img"> 
+                </button>
+                <button class="restart-audio">
+                    <img class="restart-audio-img" src="icons/87443.png" alt="img">
+                </button>
+            </div>
+        </div>
+        <div class="section-read">
             <div class="section-read-text">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
             <div class="section-read-modal">
                 <button class="modal-history" id="openSurahModal">Коран</button>
@@ -90,12 +89,14 @@
                     </div>
                 </div>
             </div>
-            <div class="section-tests">
-                <div class="tests">
-                    <div class="test-text">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
-                    TEST
-                    <br>
-                    <!-- LEVEL
+        </div>
+
+        <div class="section-tests">
+            <div class="tests">
+                <div class="test-text">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
+                TEST
+                <br>
+                <!-- LEVEL
                 <div class="levels">
                     <label class="level-option">
                         EASY
@@ -110,167 +111,165 @@
                         <input type="radio" name="lvl" value="3">
                     </label>
                 </div> -->
-                    <button class="start-btn-test">START</button>
+                <button class="start-btn-test">START</button>
+            </div>
+            <div class="test-solution">
+                <div class="title-is-timer">
+                    <p class="text-title">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</p>
+                    <div class="timer-test">00:00</div>
                 </div>
-                <div class="test-solution">
-                    <div class="title-is-timer">
-                        <p class="text-title">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</p>
-                        <div class="timer-test">00:00</div>
+                <div class="test-question">
+                    <p id="question-text"></p>
+                    <div id="answer-options">
+                        <label><input type="radio" name="answer" value="0" id="option-1"> <span
+                                id="answer-1"></span></label><br>
+                        <label><input type="radio" name="answer" value="1" id="option-2"> <span
+                                id="answer-2"></span></label><br>
+                        <label><input type="radio" name="answer" value="2" id="option-3"> <span
+                                id="answer-3"></span></label><br>
+                        <label><input type="radio" name="answer" value="3" id="option-4"> <span
+                                id="answer-4"></span></label><br>
                     </div>
-                    <div class="test-question">
-                        <p id="question-text"></p>
-                        <div id="answer-options">
-                            <label><input type="radio" name="answer" value="0" id="option-1"> <span
-                                    id="answer-1"></span></label><br>
-                            <label><input type="radio" name="answer" value="1" id="option-2"> <span
-                                    id="answer-2"></span></label><br>
-                            <label><input type="radio" name="answer" value="2" id="option-3"> <span
-                                    id="answer-3"></span></label><br>
-                            <label><input type="radio" name="answer" value="3" id="option-4"> <span
-                                    id="answer-4"></span></label><br>
-                        </div>
-                    </div>
-                    <div class="solution-test-btns">
-                        <button class="test-btns-left"><img class="test-btns-left-img" src="icons/1627.png1.png111.png"
-                                alt="img"></button>
-                        <button class="test-btns">HOME</button>
-                        <button id="show-results-btn" style="display:none;">RESULT</button>
-                        <button class="test-btns-right"><img class="test-btns-right-img" src="icons/1627.png"
-                                alt="img"></button>
-                    </div>
+                </div>
+                <div class="solution-test-btns">
+                    <button class="test-btns-left"><img class="test-btns-left-img" src="icons/1627.png1.png111.png" alt="img"></button>
+                    <button class="test-btns">HOME</button>
+                    <button id="show-results-btn" style="display:none;">RESULT</button>
+                    <button class="test-btns-right"><img class="test-btns-right-img" src="icons/1627.png" alt="img"></button>
                 </div>
             </div>
-            <div class="section-numbers-questions">
-                <div class="numers-block">
-                    <div class="numbers-questions">
-                        <p class="numers">1</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">2</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">3</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">4</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">5</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">6</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">7</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">8</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">9</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">10</p>
-                    </div>
+        </div>
+        <div class="section-numbers-questions">
+            <div class="numers-block">
+                <div class="numbers-questions">
+                    <p class="numers">1</p>
                 </div>
-                <div class="numers-block">
-                    <div class="numbers-questions">
-                        <p class="numers">11</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">12</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">13</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">14</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">15</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">16</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">17</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">18</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">19</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">20</p>
-                    </div>
+                <div class="numbers-questions">
+                    <p class="numers">2</p>
                 </div>
-                <div class="numers-block">
-                    <div class="numbers-questions">
-                        <p class="numers">21</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">22</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">23</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">24</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">25</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">26</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">27</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">28</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">29</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">30</p>
-                    </div>
+                <div class="numbers-questions">
+                    <p class="numers">3</p>
                 </div>
-                <div class="numers-block">
-                    <div class="numbers-questions">
-                        <p class="numers">31</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">32</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">33</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">34</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">35</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">36</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">37</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">38</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">39</p>
-                    </div>
-                    <div class="numbers-questions">
-                        <p class="numers">40</p>
-                    </div>
+                <div class="numbers-questions">
+                    <p class="numers">4</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">5</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">6</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">7</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">8</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">9</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">10</p>
                 </div>
             </div>
-        </section>
+            <div class="numers-block">
+                <div class="numbers-questions">
+                    <p class="numers">11</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">12</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">13</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">14</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">15</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">16</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">17</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">18</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">19</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">20</p>
+                </div>
+            </div>
+            <div class="numers-block">
+                <div class="numbers-questions">
+                    <p class="numers">21</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">22</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">23</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">24</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">25</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">26</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">27</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">28</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">29</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">30</p>
+                </div>
+            </div>
+            <div class="numers-block">
+                <div class="numbers-questions">
+                    <p class="numers">31</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">32</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">33</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">34</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">35</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">36</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">37</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">38</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">39</p>
+                </div>
+                <div class="numbers-questions">
+                    <p class="numers">40</p>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="modal-result-home">
             <div class="modal-result-text">
                 Look result
@@ -288,10 +287,10 @@
             <div id="results-container">
             </div>
         </div>
-    </div>
-    <script src="JS/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"integrity="sha384-oBqDVmMz4fnFO9gyb6+Z4/SlX71D1Q4xK5jld1Z51v9Af/PeFF4fA0pN7d0d5nGR"crossorigin="anonymous"></script>
-
+        </div>
+        <script src="JS/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6+Z4/SlX71D1Q4xK5jld1Z51v9Af/PeFF4fA0pN7d0d5nGR" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0a6C6u3+IXZZIl56g7zU5qRr0vlujvqDpPoF7Qw8Ohf3L9F3" crossorigin="anonymous"></script>
 </body>
 
 </html>
