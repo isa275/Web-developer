@@ -803,3 +803,50 @@ document.getElementById("closeSurahModal").addEventListener("click", function() 
     closeModal("pdfSurahModal");
 });
 
+
+const url = './BlessedQuran.pdf'; // Путь к вашему PDF-файлу
+
+    pdfjsLib.getDocument(url).promise.then(function(pdf) {
+      const viewer = document.getElementById('pdfViewer');
+      let currentPage = 1;  // Номер текущей страницы
+
+      // Функция для рендеринга страницы
+      function renderPage(pageNum) {
+        pdf.getPage(pageNum).then(function(page) {
+          const scale = 1.5;  // Масштаб для страницы
+          const viewport = page.getViewport({ scale: scale });
+
+          const canvas = document.createElement('canvas');  // Создаем холст для отображения страницы
+          viewer.innerHTML = '';  // Очищаем старый рендер
+          viewer.appendChild(canvas);
+
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          // Рендерим страницу на холсте
+          page.render({
+            canvasContext: context,
+            viewport: viewport
+          });
+        });
+      }
+
+      renderPage(currentPage); // Рендерим первую страницу
+
+      // Навигация по страницам
+      document.getElementById('next').addEventListener('click', function() {
+        if (currentPage < pdf.numPages) {
+          currentPage++;
+          renderPage(currentPage);
+        }
+      });
+
+      document.getElementById('prev').addEventListener('click', function() {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPage(currentPage);
+        }
+      });
+
+    });

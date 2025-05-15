@@ -67,11 +67,12 @@
         <div class="section-read">
             <div class="section-read-text">بسم الله الرحمن الرحيم<br>Во имя Аллаха, Милостивого, Милосердного!</div>
             <div class="section-read-modal">
+                <div id="pdfViewer" style="width: 100%; height: 1000px;">
                 <button class="modal-history" id="openSurahModal">Коран</button>
                 <div id="pdfSurahModal" class="pdfModal" style="display: none;">
                     <div style="position: relative;">
                         <button class="closeModal" id="closeSurahModal">HOME</button>
-                        <iframe src="BlessedQuran.pdf" width="100%" height="1000vh"></iframe>
+                        <iframe src="./BlessedQuran.pdf" width="100%" height="1000vh"></iframe>
                     </div>
                 </div>
                 <button class="modal-history" id="openSiraModal">Сира Пророка Мухаммада ﷺ</button>
@@ -87,6 +88,7 @@
                         <button class="closeModal" id="closeHadithModal">HOME</button>
                         <iframe src="" width="100%" height="1000vh"></iframe>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -290,6 +292,8 @@
         </div>
         <script src="JS/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6+Z4/SlX71D1Q4xK5jld1Z51v9Af/PeFF4fA0pN7d0d5nGR" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
 </body>
 
 </html>
