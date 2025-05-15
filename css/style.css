@@ -916,6 +916,14 @@ input[type="radio"] {
 
 /* Adaptation - Section Home page */
 
+
+    #pdfViewer {
+      width: 100%;
+      height: 1000px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
 @media (min-width: 1440px) {
     .btns-modal {
         width: auto;
