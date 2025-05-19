@@ -756,7 +756,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-<<<<<<< HEAD
 
 // document.getElementById("openSurahModal").addEventListener("click", function() {
 //     window.open("https://azan.ru/upload/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%9A%D1%83%D1%80I%D0%B0%D0%BD.pdf", "_blank");
@@ -771,22 +770,23 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Пееключение кнопок в разделе истории 
-=======
->>>>>>> ac372f37d995ac21b2b0e2f77dbce37d00c10801
 
-document.getElementById("openSurahModal").addEventListener("click", function() {
-    window.open("/pdfs/BlessedQuran.pdf", "_blank");
-});
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
 
 document.getElementById("openSiraModal").addEventListener("click", function() {
-    window.open("https://azan.kz/upload/Ibn_Khisham_Zhizneopisanie_proroka_Mukhammada.pdf", "_blank");
+    openModal("pdfSiraModal");
 });
 
 document.getElementById("openHadithModal").addEventListener("click", function() {
-    window.open("https://azan.kz/upload/101%20%D0%A5%D0%90%D0%94%D0%98%D0%A1%20%D0%98%D0%97%20%C2%AB%D0%A1%D0%90%D0%A5%D0%98%D0%A5%20%D0%90%D0%9B%D0%AC-%D0%91%D0%A3%D0%A5%D0%90%D0%A0%D0%98%C2%BB.pdf", "_blank");
+    openModal("pdfHadithModal");
 });
 
-<<<<<<< HEAD
 document.getElementById("openSurahModal").addEventListener("click", function() {
     openModal("pdfSurahModal");
 });
@@ -850,5 +850,3 @@ const url = './BlessedQuran.pdf'; // Путь к вашему PDF-файлу
       });
 
     });
-=======
->>>>>>> ac372f37d995ac21b2b0e2f77dbce37d00c10801

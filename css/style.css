@@ -118,15 +118,12 @@ body {
     margin-top: 100px;
     border-bottom-left-radius: 700px;
     border-bottom-right-radius: 700px;
-<<<<<<< HEAD
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5),  
     -4px 4px 4px rgba(0, 0, 0, 0.5), 
     0px -4px 4px rgba(0, 0, 0, 0.5); 
-=======
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5),  
     -5px 5px 5px rgba(0, 0, 0, 0.5), 
     0px -5px 5px rgba(0, 0, 0, 0.5); 
->>>>>>> ac372f37d995ac21b2b0e2f77dbce37d00c10801
     border: 2px solid rgb(187, 187, 187);
 }
 
