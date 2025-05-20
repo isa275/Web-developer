@@ -113,49 +113,48 @@ body {
 
 .counter {
     width: 300px;
-    border-radius: 300px;
+    height: 350px;
+    border-radius: 70px;
     background-color: #A9A9A9;
     margin-top: 100px;
-    border-bottom-left-radius: 700px;
-    border-bottom-right-radius: 700px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5),  
-    -4px 4px 4px rgba(0, 0, 0, 0.5), 
-    0px -4px 4px rgba(0, 0, 0, 0.5); 
+    border-bottom-left-radius: 190px;
+    border-bottom-right-radius: 190px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     border: 2px solid rgb(187, 187, 187);
 }
 
 .title {
     margin: 0 auto;
-    width: 150px;
+    width: 130px;
     font-size: 14px;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-    padding: 5px 0px 5px 0px;
+    padding: 1px 0px 1px 0px;
 }
 
 .screen {
     margin: 0 auto;
     width: 230px;
-    height: 55px;
-    border-radius: 20px;
+    height: 50px;
+    border-radius: 12px;
     background-color: white;
     text-align: right;
     padding-right: 5px;
     font-weight: 500;
     font-size: 45px;
+    padding-bottom: 10px;
     border: 3px solid rgb(225, 225, 225);
-    padding-bottom: 5px;
 }
 
 .counter-btns {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
-    gap: 14px;
+    margin-top: 30px;
+    gap: 18px;
 }
 
 .section-play {
@@ -363,7 +362,7 @@ body {
     justify-content: center;
     font-weight: 500;
     border: 2px solid rgb(187, 187, 187);
-    margin-top: 90px;
+    margin-top: 95px;
     transition: all 0.2s ease;
 }
 
@@ -908,11 +907,11 @@ input[type="radio"] {
     background-color: rgb(255, 255, 255);
 }
 
-/* .wrapper-content {
+.counter-is-btns {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-} */
+}
 
 /* Adaptation - Section Home page */
 
@@ -974,7 +973,7 @@ input[type="radio"] {
 }
 
 @media (max-width: 768px) {
-    .wrapper-content {
+    .counter-is-btns {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1038,7 +1037,7 @@ input[type="radio"] {
     }
 
     .btns-modal button {
-        color: #000 !important; 
+        color: #000 !important;
     }
 
     .counter {
@@ -1114,17 +1113,31 @@ input[type="radio"] {
         width: 210px;
         height: 40px;
         font-size: 40px;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .btn-count {
         width: 75px;
         height: 75px;
         margin-top: 85px;
+        border: none;
+    }
+
+    .color-counter {
+        width: 60px;
+        height: 60px;
+        border: none;
+    }
+
+    .btn-reset {
+        width: 60px;
+        height: 60px;
+        border: none;
     }
 
     .counter-btns {
-        font-size: 12px;
+        gap: 8px;
+        margin-top: 25px;
     }
 
     .closeModal {
@@ -1372,19 +1385,19 @@ input[type="radio"] {
         height: auto;
         margin-bottom: 30px;
     }
-    
+
     .title-is-timer {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin:  0 auto;
+        margin: 0 auto;
     }
 
     .test-question {
-       height: 250px;
-       padding-left: 10px;
-       padding-right: 10px;
-       margin-bottom: 30px;
+        height: 250px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 30px;
     }
 
     .text-title {
@@ -1397,12 +1410,12 @@ input[type="radio"] {
 
     .numbers-questions {
         font-size: 13px;
-        width: 50px;  
-        height: 25px; 
+        width: 50px;
+        height: 25px;
         border-radius: 50%;
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .numers-block {
@@ -1467,19 +1480,19 @@ input[type="radio"] {
     .test-btns-right-img {
         width: 17px;
     }
-    
+
     .test-btns {
         width: 75px;
         height: 30px;
         font-size: 12px;
-        color: #000 !important; 
+        color: #000 !important;
     }
 
     #show-results-btn {
         width: 75px;
         height: 30px;
         font-size: 12px;
-        color: #000 !important; 
+        color: #000 !important;
     }
 }
 
@@ -1489,7 +1502,7 @@ input[type="radio"] {
         height: auto;
         margin-bottom: 30px;
     }
-} 
+}
 
 @media (max-width: 320px) {
     .test-solution {
@@ -1578,18 +1591,18 @@ input[type="radio"] {
         font-size: 10px;
         color: #000 !important;
     }
-    
+
     .numers-block {
         width: 250px;
     }
 
     .numbers-questions {
         font-size: 11px;
-        width: 40px;  
-        height: 20px;  
+        width: 40px;
+        height: 20px;
         border-radius: 0;
     }
-} 
+}
 
 
 /* Adaptation - Section Audio */
@@ -1795,7 +1808,7 @@ input[type="radio"] {
         width: 250px;
         font-size: 18px;
     }
-    
+
     .counter-btns-play {
         gap: 30%;
         margin-bottom: 80px;
