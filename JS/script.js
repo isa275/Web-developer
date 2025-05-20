@@ -32,7 +32,7 @@ const screenCounter = document.getElementById('screen-counter'),
     timerTest = document.getElementsByClassName('timer-test'),
     modalWindow = document.querySelector('.modal-window'),
     restartButton = document.querySelector('.restart-audio');
-    modalBackground = document.getElementById('modalBackground'),
+modalBackground = document.getElementById('modalBackground'),
     currentTimeElement = document.getElementById('current-time'),
     durationTimeElement = document.getElementById('duration-time'),
     audioProgressBar = document.getElementById('audio-progress-bar'),
@@ -299,15 +299,15 @@ for (let i = 0; i < modalBtns.length; i++) {
                 break;
             case 3:
                 sectionRead.style.display = 'block';
-                modalBtns[0].innerHTML = 'COUNTER';    
+                modalBtns[0].innerHTML = 'COUNTER';
             default:
                 break;
         }
     });
 }
 
-// Переход на раздел тесты
 
+// Переход на раздел тесты
 startBtnTest.addEventListener('click', function () {
     testSolution.style.display = 'block';
     sectionNumbersQuestions.style.display = 'block';
@@ -317,6 +317,7 @@ startBtnTest.addEventListener('click', function () {
     modalBtns[2].style.display = 'none';
     modalBtns[3].style.display = 'none';
 });
+
 
 // Таймер 
 
@@ -756,15 +757,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById("openSurahModal").addEventListener("click", function() {
+
+
+document.getElementById("openSurahModal").addEventListener("click", function () {
     window.open("https://azan.ru/upload/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9%20%D0%9A%D1%83%D1%80I%D0%B0%D0%BD.pdf", "_blank");
 });
 
-document.getElementById("openSiraModal").addEventListener("click", function() {
+document.getElementById("openSiraModal").addEventListener("click", function () {
     window.open("https://azan.kz/upload/Ibn_Khisham_Zhizneopisanie_proroka_Mukhammada.pdf", "_blank");
 });
 
-document.getElementById("openHadithModal").addEventListener("click", function() {
+document.getElementById("openHadithModal").addEventListener("click", function () {
     window.open("https://azan.kz/upload/101%20%D0%A5%D0%90%D0%94%D0%98%D0%A1%20%D0%98%D0%97%20%C2%AB%D0%A1%D0%90%D0%A5%D0%98%D0%A5%20%D0%90%D0%9B%D0%AC-%D0%91%D0%A3%D0%A5%D0%90%D0%A0%D0%98%C2%BB.pdf", "_blank");
 });
-

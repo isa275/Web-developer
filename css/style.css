@@ -4,8 +4,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html, body {
-  touch-action: manipulation; 
+html,
+body {
+    touch-action: manipulation;
 }
 
 body {
@@ -916,6 +917,9 @@ input[type="radio"] {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/* burger */
+
 
 /* Adaptation - Section Home page */
 
@@ -1939,7 +1943,8 @@ input[type="radio"] {
 
 @media (max-width: 768px) {
     body {
-        background-size: cover; 
-        background-attachment: scroll; 
+        background-size: cover;
+        background-attachment: scroll;
     }
 }
+
