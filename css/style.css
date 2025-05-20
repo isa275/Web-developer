@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    background-image: url('https://img.freepik.com/premium-photo/white-mosque-is-white-background-with-cloud-pattern-ramadan-mubarak-beautiful-greeting_430468-819.jpg?w=360');
+    background-image: url('https://img.freepik.com/premium-photo/white-mosque-with-white-dome-white-dome_605423-152004.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1934,5 +1934,12 @@ input[type="radio"] {
         width: 220px;
         font-size: 12px;
         line-height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover; 
+        background-attachment: scroll; 
     }
 }
