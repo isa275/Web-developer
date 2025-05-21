@@ -9,6 +9,7 @@ body {
     touch-action: manipulation;
 }
 
+
 body {
     background-image: url('https://img.freepik.com/premium-photo/white-mosque-with-white-dome-white-dome_605423-152004.jpg');
     background-position: center center;
@@ -126,6 +127,7 @@ body {
     border-bottom-right-radius: 190px;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     border: 2px solid rgb(187, 187, 187);
+    touch-action: manipulation;
 }
 
 .title {
@@ -361,7 +363,6 @@ body {
     border: none;
     background-color: rgb(255, 255, 255);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -920,6 +921,122 @@ input[type="radio"] {
 
 /* burger */
 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .navbar {
+        width: 400px;
+        height: 1px;
+    }
+
+    .btns-modal.show {
+        margin-top: 10px;
+        width: 180px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -190px;
+    }
+
+    .btns-modal {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s 0.3s;
+    }
+
+    .btns {
+        margin-left: -85px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 16px;
+        text-align: left;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .btns:hover {
+        color: #f0f0f0;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btns-modal.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .hamburger-menu.open .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 7px;
+    }
+
+    .hamburger-menu.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btns-modal.show {
+        margin-top: 10px;
+        width: 140px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -12px;
+    }
+
+    .btns {
+        margin-left: -40px;
+    }
+
+}
 
 /* Adaptation - Section Home page */
 
@@ -1045,7 +1162,7 @@ input[type="radio"] {
     }
 
     .btns-modal button {
-        color: #000 !important;
+        color: #fffefe !important;
     }
 
     .counter {
@@ -1944,7 +2061,5 @@ input[type="radio"] {
 @media (max-width: 768px) {
     body {
         background-size: cover;
-        background-attachment: scroll;
     }
 }
-
