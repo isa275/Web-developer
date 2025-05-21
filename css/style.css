@@ -16,10 +16,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
-    margin: 0;
-    overflow-x: hidden;
-    /* background: linear-gradient(to top, #ffffff, #f0f0f0); */
 }
 
 .wrapper {
@@ -1311,7 +1307,7 @@ input[type="radio"] {
         line-height: 40px;
         margin-top: 15px;
         margin-bottom: 30px;
-        font-size: 19px;
+        font-size: 17px;
     }
 
     .start-btn-test {
@@ -1331,7 +1327,7 @@ input[type="radio"] {
 
     .test-text {
         width: 250px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 35px;
     }
 
@@ -1352,7 +1348,7 @@ input[type="radio"] {
 
     .test-text {
         width: 230px;
-        font-size: 17px;
+        font-size: 15px;
         margin-top: 20px;
     }
 
@@ -1537,7 +1533,7 @@ input[type="radio"] {
         font-size: 13px;
         width: 50px;
         height: 25px;
-        border-radius: 50%;
+        border-radius: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1804,13 +1800,14 @@ input[type="radio"] {
 
     .screen-play {
         width: 300px;
-        font-size: 19px;
+        font-size: 17px;
         margin-top: 25px;
     }
 
     .restart-audio {
-        width: 38px;
+        width: 40px;
         margin-left: 115px;
+        border-radius: 20%;
     }
 
     .restart-audio-img {
@@ -1891,7 +1888,7 @@ input[type="radio"] {
     }
 
     .restart-audio {
-        width: 38px;
+        width: 40px;
         position: absolute;
         margin-top: 120px;
         margin-left: 330px;
@@ -1914,7 +1911,7 @@ input[type="radio"] {
 
     .screen-play {
         width: 250px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 35px;
         margin-top: 20px;
     }
@@ -1931,7 +1928,7 @@ input[type="radio"] {
 
     .screen-play {
         width: 250px;
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .counter-btns-play {
@@ -1983,7 +1980,7 @@ input[type="radio"] {
 
     .section-read-text {
         width: 250px;
-        font-size: 18px;
+        font-size: 17px;
         line-height: 35px;
         margin-top: 20px;
         margin-bottom: 30px;
@@ -2009,11 +2006,19 @@ input[type="radio"] {
     .section-read {
         width: 310px;
     }
+
+    .section-read-text {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 320px) {
     .section-read {
         width: 270px;
+    }
+
+    .section-read-text {
+        font-size: 15px;
     }
 }
 
