@@ -9,7 +9,6 @@ body {
     touch-action: manipulation;
 }
 
-
 body {
     background-image: url('https://img.freepik.com/premium-photo/white-mosque-with-white-dome-white-dome_605423-152004.jpg');
     background-position: center center;
@@ -2060,11 +2059,5 @@ input[type="radio"] {
         width: 220px;
         font-size: 12px;
         line-height: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        background-size: cover;
     }
 }
