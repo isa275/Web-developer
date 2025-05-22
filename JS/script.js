@@ -777,17 +777,3 @@ hamburgerMenu.addEventListener('click', function () {
     btnsModal.classList.toggle('show');
     hamburgerMenu.classList.toggle('open');
 });
-
-// Блокировка двойних нажатий
-
-document.body.addEventListener('touchstart', function (event) {
-    if (event.target.disabled) {
-        event.preventDefault();
-        return;
-    }
-    event.target.disabled = true;
-
-    setTimeout(function () {
-        event.target.disabled = false; // Снимаем блокировку
-    }, 1000);
-});
