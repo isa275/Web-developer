@@ -774,6 +774,24 @@ document.getElementById("openHadithModal").addEventListener("click", function ()
 // Бургер 
 
 hamburgerMenu.addEventListener('click', function () {
-    btnsModal.classList.toggle('show');
+    const testSolution = document.querySelector('.test-solution');
+    if (testSolution && testSolution.offsetParent !== null) return;
+
+    if (btnsModal.classList.contains('show')) {
+        // Сначала убираем класс show, чтобы запустить анимацию закрытия
+        btnsModal.classList.remove('show');
+
+        // Через 300мс (длительность transition) скрываем через visibility
+        setTimeout(() => {
+            btnsModal.style.visibility = 'hidden';
+        }, 300);
+    } else {
+        // Перед показом делаем видимым
+        btnsModal.style.visibility = 'visible';
+        // Добавляем класс show для анимации открытия
+        btnsModal.classList.add('show');
+    }
+
     hamburgerMenu.classList.toggle('open');
 });
+

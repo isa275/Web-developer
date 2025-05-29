@@ -1522,7 +1522,7 @@ input[type="radio"] {
 
     .text-title {
         width: 250px;
-        font-size: 16px;
+        font-size: 14px;
         order: 0;
         margin-top: 10px;
         line-height: 31px;
@@ -1545,7 +1545,7 @@ input[type="radio"] {
     #question-text {
         width: auto;
         height: auto;
-        font-size: 16px;
+        font-size: 14px;
         padding-left: 20px;
         padding-right: 20px;
         margin-bottom: 20px;
@@ -1555,25 +1555,26 @@ input[type="radio"] {
     #answer-options {
         width: auto;
         margin-top: 0;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 35px;
         margin-left: 30px;
         margin-bottom: 0px;
     }
 
     input[type="radio"] {
-        width: 13px;
-        height: 13px;
+        width: 11px;
+        height: 11px;
         margin-right: 10px;
     }
 
     .timer-test {
         width: 95px;
         height: 25px;
-        font-size: 16px;
+        font-size: 14px;
         margin: 0 auto;
         margin-top: 12px;
         order: 1;
+        border-radius: 0;
     }
 
     .solution-test-btns {
@@ -1604,7 +1605,7 @@ input[type="radio"] {
     .test-btns {
         width: 75px;
         height: 30px;
-        font-size: 12px;
+        font-size: 11px;
         color: #000 !important;
     }
 
