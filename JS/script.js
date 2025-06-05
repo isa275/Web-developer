@@ -777,21 +777,32 @@ hamburgerMenu.addEventListener('click', function () {
     const testSolution = document.querySelector('.test-solution');
     if (testSolution && testSolution.offsetParent !== null) return;
 
-    if (btnsModal.classList.contains('show')) {
-        // Сначала убираем класс show, чтобы запустить анимацию закрытия
-        btnsModal.classList.remove('show');
-
-        // Через 300мс (длительность transition) скрываем через visibility
-        setTimeout(() => {
-            btnsModal.style.visibility = 'hidden';
-        }, 300);
-    } else {
-        // Перед показом делаем видимым
-        btnsModal.style.visibility = 'visible';
-        // Добавляем класс show для анимации открытия
-        btnsModal.classList.add('show');
-    }
-
+    toggleModal();
     hamburgerMenu.classList.toggle('open');
 });
 
+btnsModal.addEventListener('click', function (event) {
+    if (event.target !== btnsModal) {
+        toggleModal();
+        hamburgerMenu.classList.remove('open'); 
+    }
+});
+
+function toggleModal() {
+    if (btnsModal.classList.contains('show')) {
+        btnsModal.classList.remove('show');
+        setTimeout(() => {
+            btnsModal.style.visibility = 'hidden';
+            // Убираем блокировку прокрутки и возвращаем скролл на место
+            document.body.classList.remove('modal-open');
+            window.scrollTo(0, scrollY);
+        }, 300);
+    } else {
+        // Сохраняем текущую позицию прокрутки
+        scrollY = window.scrollY;
+        btnsModal.style.visibility = 'visible';
+        btnsModal.classList.add('show');
+        // Добавляем блокировку прокрутки и фиксируем позицию body
+        document.body.classList.add('modal-open');
+    }
+}
