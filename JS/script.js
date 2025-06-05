@@ -773,6 +773,8 @@ document.getElementById("openHadithModal").addEventListener("click", function ()
 
 // Бургер 
 
+let scrollY = 0;
+
 hamburgerMenu.addEventListener('click', function () {
     const testSolution = document.querySelector('.test-solution');
     if (testSolution && testSolution.offsetParent !== null) return;
@@ -782,10 +784,9 @@ hamburgerMenu.addEventListener('click', function () {
 });
 
 btnsModal.addEventListener('click', function (event) {
-    // Проверим, что клик произошёл по слову (внутреннему элементу)
     if (event.target !== btnsModal) {
         toggleModal();
-        hamburgerMenu.classList.remove('open'); // Убираем активное состояние у бургера
+        hamburgerMenu.classList.remove('open');
     }
 });
 
@@ -794,21 +795,7 @@ function toggleModal() {
         btnsModal.classList.remove('show');
         setTimeout(() => {
             btnsModal.style.visibility = 'hidden';
-        }, 300);
-    } else {
-        btnsModal.style.visibility = 'visible';
-        btnsModal.classList.add('show');
-    }
-}
-
-let scrollY = 0;
-
-function toggleModal() {
-    if (btnsModal.classList.contains('show')) {
-        btnsModal.classList.remove('show');
-        setTimeout(() => {
-            btnsModal.style.visibility = 'hidden';
-            // Убираем стили фиксации и восстанавливаем скролл
+            // Возвращаем body в исходное состояние и восстанавливаем скролл
             document.body.style.position = '';
             document.body.style.top = '';
             document.body.style.left = '';
@@ -816,11 +803,10 @@ function toggleModal() {
             window.scrollTo(0, scrollY);
         }, 300);
     } else {
-        // Сохраняем текущий скролл
+        // Сохраняем текущую позицию прокрутки страницы
         scrollY = window.scrollY;
         btnsModal.style.visibility = 'visible';
         btnsModal.classList.add('show');
-
         // Фиксируем body, чтобы избежать смещения фона и дергания
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollY}px`;
