@@ -771,9 +771,15 @@ document.getElementById("openHadithModal").addEventListener("click", function ()
     window.open("https://azan.kz/upload/101%20%D0%A5%D0%90%D0%94%D0%98%D0%A1%20%D0%98%D0%97%20%C2%AB%D0%A1%D0%90%D0%A5%D0%98%D0%A5%20%D0%90%D0%9B%D0%AC-%D0%91%D0%A3%D0%A5%D0%90%D0%A0%D0%98%C2%BB.pdf", "_blank");
 });
 
-// Бургер 
+// Бургер
+
+function isMobile() {
+  return window.innerWidth <= 768; // можно поменять порог под твой дизайн
+}
 
 hamburgerMenu.addEventListener('click', function () {
+    if (!isMobile()) return; // если не моб — не делать ничего
+
     const testSolution = document.querySelector('.test-solution');
     if (testSolution && testSolution.offsetParent !== null) return;
 
@@ -782,6 +788,8 @@ hamburgerMenu.addEventListener('click', function () {
 });
 
 btnsModal.addEventListener('click', function (event) {
+    if (!isMobile()) return; // тоже игнорируем на десктопе
+
     if (event.target !== btnsModal) {
         toggleModal();
         hamburgerMenu.classList.remove('open');
