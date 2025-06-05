@@ -773,8 +773,6 @@ document.getElementById("openHadithModal").addEventListener("click", function ()
 
 // Бургер 
 
-let scrollY = 0;
-
 hamburgerMenu.addEventListener('click', function () {
     const testSolution = document.querySelector('.test-solution');
     if (testSolution && testSolution.offsetParent !== null) return;
@@ -795,22 +793,9 @@ function toggleModal() {
         btnsModal.classList.remove('show');
         setTimeout(() => {
             btnsModal.style.visibility = 'hidden';
-            // Возвращаем body в исходное состояние и восстанавливаем скролл
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            window.scrollTo(0, scrollY);
         }, 300);
     } else {
-        // Сохраняем текущую позицию прокрутки страницы
-        scrollY = window.scrollY;
         btnsModal.style.visibility = 'visible';
         btnsModal.classList.add('show');
-        // Фиксируем body, чтобы избежать смещения фона и дергания
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.left = '0';
-        document.body.style.right = '0';
     }
 }
