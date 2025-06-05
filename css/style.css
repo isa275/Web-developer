@@ -17,14 +17,6 @@ body {
     background-attachment: fixed;
 }
 
-
-body.modal-open {
-    position: fixed;
-    width: 100%;
-    overflow: hidden;
-    touch-action: none;
-}
-
 .wrapper {
     width: 1120px;
     max-width: 100%;

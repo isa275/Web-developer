@@ -782,9 +782,10 @@ hamburgerMenu.addEventListener('click', function () {
 });
 
 btnsModal.addEventListener('click', function (event) {
+    // Проверим, что клик произошёл по слову (внутреннему элементу)
     if (event.target !== btnsModal) {
         toggleModal();
-        hamburgerMenu.classList.remove('open'); 
+        hamburgerMenu.classList.remove('open'); // Убираем активное состояние у бургера
     }
 });
 
@@ -793,16 +794,37 @@ function toggleModal() {
         btnsModal.classList.remove('show');
         setTimeout(() => {
             btnsModal.style.visibility = 'hidden';
-            // Убираем блокировку прокрутки и возвращаем скролл на место
-            document.body.classList.remove('modal-open');
+        }, 300);
+    } else {
+        btnsModal.style.visibility = 'visible';
+        btnsModal.classList.add('show');
+    }
+}
+
+let scrollY = 0;
+
+function toggleModal() {
+    if (btnsModal.classList.contains('show')) {
+        btnsModal.classList.remove('show');
+        setTimeout(() => {
+            btnsModal.style.visibility = 'hidden';
+            // Убираем стили фиксации и восстанавливаем скролл
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
             window.scrollTo(0, scrollY);
         }, 300);
     } else {
-        // Сохраняем текущую позицию прокрутки
+        // Сохраняем текущий скролл
         scrollY = window.scrollY;
         btnsModal.style.visibility = 'visible';
         btnsModal.classList.add('show');
-        // Добавляем блокировку прокрутки и фиксируем позицию body
-        document.body.classList.add('modal-open');
+
+        // Фиксируем body, чтобы избежать смещения фона и дергания
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
     }
 }
