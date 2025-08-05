@@ -748,21 +748,6 @@ resulsBtn.addEventListener('click', function () {
     modalResultHome.style.display = 'none';
 });
 
-app.get('/api/checkAnswers', (req, res) => {
-    // Получаем ответы пользователя из query-параметра
-    const userAnswers = req.query.answers ? JSON.parse(req.query.answers) : [];
-    let correctCount = 0;
-
-    userAnswers.forEach((answer, i) => {
-        if (questions[i] && questions[i].correctAnswer === answer) {
-            correctCount++;
-        }
-    });
-
-    res.json({ correctCount, total: questions.length });
-});
-
-
 // На главную
 
 document.addEventListener("DOMContentLoaded", function () {
