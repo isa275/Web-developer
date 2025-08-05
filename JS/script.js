@@ -308,6 +308,7 @@ for (let i = 0; i < modalBtns.length; i++) {
 
 
 // Переход на раздел тесты
+
 startBtnTest.addEventListener('click', function () {
     testSolution.style.display = 'block';
     sectionNumbersQuestions.style.display = 'block';
@@ -558,7 +559,7 @@ const questions = [
     }
 ];
 
-// Переключение вопросов и результаты теста
+// Переключение вопросов  результаты теста
 
 let currentQuestionIndex = 0;
 let userAnswers = Array(questions.length).fill(null);
@@ -747,6 +748,21 @@ resulsBtn.addEventListener('click', function () {
     modalResultHome.style.display = 'none';
 });
 
+app.get('/api/checkAnswers', (req, res) => {
+    // Получаем ответы пользователя из query-параметра
+    const userAnswers = req.query.answers ? JSON.parse(req.query.answers) : [];
+    let correctCount = 0;
+
+    userAnswers.forEach((answer, i) => {
+        if (questions[i] && questions[i].correctAnswer === answer) {
+            correctCount++;
+        }
+    });
+
+    res.json({ correctCount, total: questions.length });
+});
+
+
 // На главную
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -774,11 +790,11 @@ document.getElementById("openHadithModal").addEventListener("click", function ()
 // Бургер
 
 function isMobile() {
-  return window.innerWidth <= 768; // можно поменять порог под твой дизайн
+    return window.innerWidth <= 768;
 }
 
 hamburgerMenu.addEventListener('click', function () {
-    if (!isMobile()) return; // если не моб — не делать ничего
+    if (!isMobile()) return;
 
     const testSolution = document.querySelector('.test-solution');
     if (testSolution && testSolution.offsetParent !== null) return;
@@ -788,7 +804,7 @@ hamburgerMenu.addEventListener('click', function () {
 });
 
 btnsModal.addEventListener('click', function (event) {
-    if (!isMobile()) return; // тоже игнорируем на десктопе
+    if (!isMobile()) return;
 
     if (event.target !== btnsModal) {
         toggleModal();

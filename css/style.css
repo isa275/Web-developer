@@ -573,7 +573,6 @@ input[type="radio"]:checked::before {
     margin: 0 auto;
     margin-top: 5px;
     width: 890px;
-    height: 770px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -622,6 +621,7 @@ input[type="radio"]:checked::before {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .test-btns {
@@ -719,7 +719,7 @@ input[type="radio"]:checked::before {
 
 .test-question {
     margin-top: 60px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     font-size: 24px;
 }
 
